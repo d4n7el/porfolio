@@ -10,6 +10,8 @@
       "src/*": ["./src/*"],
       "@hooks/*": ["./src/custom-hook/*"],
       "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/porfolio/styles/*"],
+      "@images/*": ["./src/assets/images/*"],
       "@components-porfolio/*": ["./src/porfolio/components/*"],
       "@components-views/*": ["./src/porfolio/views/*"]
     },

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 export const useDarkTheme = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const prefersDarkMode =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [darkMode, setDarkMode] = useState<boolean>(prefersDarkMode);
 
   useEffect(() => {
-    const prefersDarkMode =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
     applyChangeTheme(prefersDarkMode);
   });
 
@@ -21,12 +21,13 @@ export const useDarkTheme = () => {
   };
 
   const changeTheme = () => {
-    setDarkMode(darkMode ? false : true);
+    setDarkMode(!darkMode);
   };
 
   return {
     darkMode,
     setDarkMode,
     changeTheme,
+    toggle: useEffect(() => setDarkMode((current) => !current), [setDarkMode]),
   };
 };
