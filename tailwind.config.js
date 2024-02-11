@@ -10,16 +10,23 @@ export default {
   darkMode: 'class',
   theme: {
     colors: {
-      'dark-primary': '#121919',
-      'dark-secondary': '#132E35',
-      'dark-tertiary': '#2D4A53',
-      'light-primary': '#69818D',
-      'light-secondary': '#AFB3B7',
-      'light-tertiary': '#56636A',
+      'boston-blue-10': 'rgb(30 41 59)',
+      'boston-blue-50': '#ecfdff',
+      'boston-blue-100': '#d0f8fd',
+      'boston-blue-200': '#a6effb',
+      'boston-blue-300': '#69e1f7',
+      'boston-blue-400': '#25c9eb',
+      'boston-blue-500': '#09acd1',
+      'boston-blue-600': '#0b94be',
+      'boston-blue-700': '#106e8e',
+      'boston-blue-800': '#165974',
+      'boston-blue-900': '#174b62',
+      'boston-blue-950': '#093143',
       light: '#C1DADF',
       'light-neutral': '#E4E3EA',
       'white-alpha': 'rgba(255, 255, 255, 0.8)',
-      'black-alpha': 'rgba(47, 47, 47, 0.9)',
+      'black-alpha': 'rgba(47, 47, 47, 0.4)',
+      black: 'rgba(14, 21, 21, 1)',
     },
     extend: {
       fontFamily: {
@@ -39,7 +46,8 @@ export default {
       },
       dark: {
         borderColor: (theme) => ({
-          'active-link': theme('colors.light-neutral'), // Usa el color 'dark-tertiary' en el modo oscuro
+          'active-link': theme('colors.light-neutral'),
+          nav: theme('colors.boston-blue-10'),
         }),
       },
     },

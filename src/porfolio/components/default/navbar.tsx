@@ -11,7 +11,7 @@ export const NavbarDefault = () => {
   };
 
   return (
-    <Navbar className='navbar-default dark:bg-dark-primary bg-light'>
+    <Navbar className='navbar-default dark:bg-black bg-white-alpha shadow-2xl'>
       <NavbarContent
         className={`hidden sm:flex gap-4 font-default font-semibold`}
         justify='center'
@@ -19,7 +19,7 @@ export const NavbarDefault = () => {
         <NavbarItem>
           <Link
             onClick={() => changeActiveLink('home')}
-            className={`dark:text-light text-dark-primary text-1xl tracking-[.15em] 
+            className={`dark:text-boston-blue-100 text-boston-blue-900 text-1xl tracking-[.15em] 
             cursor-pointer px-3 rounded-md ${
               linkActive === 'home' ? 'border-active-link' : ''
             }`}
@@ -31,8 +31,8 @@ export const NavbarDefault = () => {
         <NavbarItem isActive>
           <Link
             onClick={() => changeActiveLink('about')}
-            className={`dark:text-light
-             text-dark-primary 
+            className={`dark:text-boston-blue-100
+             text-boston-blue-900 
               text-1xl tracking-[.15em] 
               cursor-pointer hover:bg-te px-3 rounded-md ${
                 linkActive === 'about' ? 'border-active-link' : ''
@@ -46,7 +46,7 @@ export const NavbarDefault = () => {
         <NavbarItem>
           <Link
             onClick={() => changeActiveLink('resume')}
-            className={`dark:text-light text-dark-primary 
+            className={`dark:text-boston-blue-100 text-boston-blue-900 
             text-1xl tracking-[.15em] 
             cursor-pointer hover:bg-te px-3 rounded-md ${
               linkActive === 'resume' ? 'border-active-link' : ''
@@ -61,11 +61,11 @@ export const NavbarDefault = () => {
         <NavbarItem className='h-6 w-6 flex cursor-pointer'>
           {darkMode ? (
             <button onClick={changeTheme}>
-              <span className='icon-[icon-park-solid--dark-mode] h-6 w-6 dark:text-light text-dark-primary'></span>
+              <span className='icon-[icon-park-solid--dark-mode] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
             </button>
           ) : (
             <button onClick={changeTheme}>
-              <span className='icon-[material-symbols-light--dark-mode-rounded] h-6 w-6 dark:text-light text-dark-primary'></span>
+              <span className='icon-[material-symbols-light--dark-mode-rounded] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
             </button>
           )}
         </NavbarItem>
