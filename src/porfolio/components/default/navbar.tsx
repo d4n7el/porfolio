@@ -11,7 +11,7 @@ export const NavbarDefault = () => {
   };
 
   return (
-    <Navbar className='navbar-default dark:bg-black bg-white-alpha shadow-2xl'>
+    <Navbar className='navbar-default dark:bg-black bg-white-alpha shadow-2xl shadow-none'>
       <NavbarContent
         className={`hidden sm:flex gap-4 font-default font-semibold`}
         justify='center'

@@ -25,8 +25,10 @@ export default {
       light: '#C1DADF',
       'light-neutral': '#E4E3EA',
       'white-alpha': 'rgba(255, 255, 255, 0.8)',
+      'white-alpha-light': 'rgba(255, 255, 255, 0.1)',
       'black-alpha': 'rgba(47, 47, 47, 0.4)',
       black: 'rgba(14, 21, 21, 1)',
+      white: 'rgba(255, 255, 255, 0.9)',
     },
     extend: {
       fontFamily: {
@@ -37,12 +39,14 @@ export default {
       },
       borderColor: (theme) => ({
         'active-link': theme('colors.dark-tertiary'),
+        'white-alpha-light': theme('colors.white-alpha-light'),
       }),
       backgroundImage: {
         'light-home-bg-default':
           "url('/src/assets/images/light-home-bg-default.webp')",
         'dark-home-bg-default':
           "url('/src/assets/images/dark-home-bg-default.webp')",
+        me: "url('/src/assets/images/me.webp')",
       },
       dark: {
         borderColor: (theme) => ({
