@@ -1,11 +1,10 @@
 import { Navbar, NavbarContent, NavbarItem, Link } from '@nextui-org/react';
-import { useDarkTheme } from '@hooks/use-dark-theme';
+import { useTheme } from 'next-themes';
 import { useState } from 'react';
 
 export const NavbarDefault = () => {
   const [linkActive, setLinkActive] = useState<string>('resume');
-  const { darkMode, changeTheme } = useDarkTheme();
-
+  const { theme, setTheme } = useTheme();
   const changeActiveLink = (activeLink: string) => {
     setLinkActive(activeLink);
   };
@@ -59,12 +58,12 @@ export const NavbarDefault = () => {
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem className='h-6 w-6 flex cursor-pointer'>
-          {darkMode ? (
-            <button onClick={changeTheme}>
+          {theme === 'light' ? (
+            <button onClick={() => setTheme('dark')}>
               <span className='icon-[icon-park-solid--dark-mode] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
             </button>
           ) : (
-            <button onClick={changeTheme}>
+            <button onClick={() => setTheme('light')}>
               <span className='icon-[material-symbols-light--dark-mode-rounded] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
             </button>
           )}

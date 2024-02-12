@@ -1,12 +1,14 @@
 import { SelectPortfolioView } from '@components-views/select-porfolio';
 import { NextUIProvider } from '@nextui-org/react';
-
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import './App.css';
 
 export const App = () => {
   return (
     <NextUIProvider>
-      <SelectPortfolioView></SelectPortfolioView>
+      <NextThemesProvider attribute='class' defaultTheme='dark'>
+        <SelectPortfolioView></SelectPortfolioView>
+      </NextThemesProvider>
     </NextUIProvider>
   );
 };
