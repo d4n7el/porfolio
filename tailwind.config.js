@@ -29,6 +29,7 @@ export default {
       'black-alpha': 'rgba(47, 47, 47, 0.4)',
       black: 'rgba(14, 21, 21, 1)',
       white: 'rgba(255, 255, 255, 0.9)',
+      transparent: 'transparent',
     },
     extend: {
       fontFamily: {
