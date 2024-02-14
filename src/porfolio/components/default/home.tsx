@@ -69,11 +69,12 @@ export const HomeDefault = () => {
                 rounded-xl
                border-boston-blue-800
                 border-solid border
-                w-60 sm:w-40 h-fit
-                card-blur py-10 scale-up-top-right flex items-center justify-center'
+                w-60 sm:w-40 
+                card-blur h-24 scale-up-top-right flex items-center justify-center'
             >
               <a
-                href='www.google.com'
+                href='https://www.linkedin.com/in/daniel-felipe-zamora-ortiz/'
+                target='blank'
                 className='cursor-pointer dark:text-boston-blue-100 text-boston-blue-800'
               >
                 <span className='icon-[bi--linkedin] h-12 w-12'></span>
@@ -85,11 +86,12 @@ export const HomeDefault = () => {
               rounded-xl
               border-boston-blue-800
               border-solid border
-              w-60 sm:w-40 h-fit
-              card-blur py-10 scale-up-top-right flex items-center justify-center'
+              w-60 sm:w-40 
+              card-blur h-24 scale-up-top-right flex items-center justify-center'
             >
               <a
-                href='www.google.com'
+                target='blank'
+                href='https://github.com/d4n7el'
                 className='cursor-pointer dark:text-boston-blue-100 text-boston-blue-800'
               >
                 <span className='icon-[mdi--github] h-12 w-12'></span>
@@ -101,14 +103,32 @@ export const HomeDefault = () => {
               rounded-xl
               border-boston-blue-800
               border-solid border
-              w-60 sm:w-40 h-fit
-              card-blur py-10 scale-up-top-right flex items-center justify-center'
+              w-60 sm:w-40 
+              card-blur h-24 scale-up-top-right flex items-center justify-center'
             >
               <a
-                href='www.google.com'
+                target='blank'
+                href='https://api.whatsapp.com/send?phone=3206198705'
                 className='cursor-pointer dark:text-boston-blue-100 text-boston-blue-800'
               >
                 <span className='icon-[simple-icons--whatsapp] h-12 w-12'></span>
+              </a>
+            </div>
+            <div
+              className='bg-white-alpha
+              dark:bg-black-alpha
+              rounded-xl
+              border-boston-blue-800
+              border-solid border
+              w-60 sm:w-40 
+              card-blur h-24 scale-up-top-right flex items-center justify-center'
+            >
+              <a
+                target='blank'
+                href='mailto:dfzortiz@gmail.com?subject=Direct contact from portfolio'
+                className='cursor-pointer dark:text-boston-blue-100 text-boston-blue-800'
+              >
+                <span className='icon-[uil--envelope-upload] h-12 w-12'></span>
               </a>
             </div>
           </div>
