@@ -12,7 +12,7 @@ export const ResumeDefault: React.FC<NavProps> = ({
       className='sm:h-[140vh] lg:h-[100vh] 
       dark:bg-black bg-white
       dark:border-white-alpha-light border-boston-blue-500
-      border-t-1'
+      border-t-1 p-10 sm:p-0'
     >
       <div
         id='resume'

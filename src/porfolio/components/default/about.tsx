@@ -9,7 +9,7 @@ export const AboutDefault: React.FC<NavProps> = ({
   return (
     <div
       id='about'
-      className='w-screen sm:h-[100vh] dark:bg-black bg-white pt-20 px-6'
+      className='w-screen sm:h-[100vh] dark:bg-black bg-white pt-5 sm:pt-10 px-6'
       onMouseEnter={() => {
         changeActiveLink('about');
       }}
