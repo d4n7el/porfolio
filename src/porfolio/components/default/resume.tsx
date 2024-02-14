@@ -16,17 +16,17 @@ export const ResumeDefault: React.FC<NavProps> = ({
     >
       <div
         id='resume'
-        className='w-full grid md:grid-cols-2 lg:grid-cols-3 px-5'
+        className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-1 sm:px-5'
         onMouseEnter={() => {
           changeActiveLink('resume');
         }}
       >
-        <div className=''>
+        <div
+          className='w-12/12  md:w-10/12
+           lg:w-10/12 xl:w-10/12'
+        >
           <Title title='SOFTWARE SKILL'></Title>
-          <section
-            className='mt-10 md:w-10/12
-           lg:w-10/12 xl:w-10/12 flex flex-wrap gap-3'
-          >
+          <section className='flex flex-wrap gap-3 mt-10 '>
             <ChipSkill
               icon={<span className='icon-[logos--react]'></span>}
               iconLabel='React'
@@ -84,9 +84,12 @@ export const ResumeDefault: React.FC<NavProps> = ({
             ></ChipSkill>
           </section>
         </div>
-        <div className=''>
+        <div
+          className='w-12/12 md:w-10/12
+           lg:w-10/12 xl:w-10/12 mt-10 sm:mt-0 px-5 sm:px-0'
+        >
           <Title title='EXPERIENCE'></Title>
-          <section className='mt-10 w-10/12 flex flex-wrap gap-2 '>
+          <section className='mt-10 w-12/12 flex flex-wrap gap-2 '>
             <TimeLine
               title='Capmotion Technologies'
               subtitle='Front-end developer'
@@ -112,12 +115,12 @@ export const ResumeDefault: React.FC<NavProps> = ({
             ></TimeLine>
           </section>
         </div>
-        <div className='md:mt-28 lg:mt-0'>
+        <div
+          className='w-11/12  md:w-10/12
+           lg:w-10/12 xl:w-10/12 mt-10 sm:mt-0 mb-10 sm:mb-0'
+        >
           <Title title='PERSONAL SKILLS'></Title>
-          <section
-            className='mt-10 md:w-10/12
-           lg:w-10/12 xl:w-10/12 flex flex-wrap gap-3 '
-          >
+          <section className='mt-10 flex flex-wrap gap-3'>
             <PersonalSkills
               label='Problem solving skills'
               icon={

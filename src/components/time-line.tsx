@@ -56,7 +56,7 @@ export const TimeLine: React.FC<TimeLineProps> = ({
               <h4 className='text-small font-semibold leading-none dark:text-boston-blue-400 text-boston-blue-900 '>
                 {title}
               </h4>
-              <h5 className='text-small tracking-tight  dark:text-boston-blue-50 text-boston-blue-900 '>
+              <h5 className='text-small tracking-tight text-left  dark:text-boston-blue-50 text-boston-blue-900 '>
                 {subtitle}
               </h5>
               {htmlContent}
@@ -64,7 +64,7 @@ export const TimeLine: React.FC<TimeLineProps> = ({
           </div>
         </CardHeader>
         <CardBody className='px-3 py-0 text-small text-default-400'>
-          <p>{content}</p>
+          <p className='text-left'>{content}</p>
         </CardBody>
         <CardFooter className='gap-3'>
           <div className='flex gap-1 items-center'>
