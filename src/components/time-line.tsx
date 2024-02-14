@@ -32,7 +32,7 @@ export const TimeLine: React.FC<TimeLineProps> = ({
       className='w-full
         flex justify-between items-center
         dark:border-l-white-alpha-light 
-        border-l-boston-blue-500 border-1 border-r-0 border-b-0 border-t-0 px-10 py-3 relative min-h-28'
+        border-l-boston-blue-500 border-1 border-r-0 border-b-0 border-t-0 px-10 py-3 pr-1 relative min-h-28'
     >
       <div className='absolute left-[-20px]'>
         <Badge shape='circle' showOutline={false} className='left-0 absolute'>
@@ -41,7 +41,7 @@ export const TimeLine: React.FC<TimeLineProps> = ({
             radius='full'
             fallback={
               !icon ? (
-                <span className='icon-[iconamoon--history-thin] text-2xl text-boston-blue-950'></span>
+                <span className='icon-[iconamoon--history-thin] text-2xl dark:text-white-alpha text-boston-blue-950'></span>
               ) : (
                 ''
               )
@@ -53,10 +53,10 @@ export const TimeLine: React.FC<TimeLineProps> = ({
         <CardHeader className='justify-between'>
           <div className='flex gap-5'>
             <div className='flex flex-col gap-1 items-start justify-center'>
-              <h4 className='text-small font-semibold leading-none dark:text-boston-blue-50 text-boston-blue-900 '>
+              <h4 className='text-small font-semibold leading-none dark:text-boston-blue-400 text-boston-blue-900 '>
                 {title}
               </h4>
-              <h5 className='text-small tracking-tight dark:text-boston-blue-400 text-boston-blue-900 '>
+              <h5 className='text-small tracking-tight  dark:text-boston-blue-50 text-boston-blue-900 '>
                 {subtitle}
               </h5>
               {htmlContent}

@@ -18,6 +18,7 @@ export const ChipSkill: React.FC<ChipSkillProps> = ({
       className='w-full
       flex justify-between items-center 
       gap-5
+      bg-white dark:bg-transparent
     dark:border-white-alpha-light border-boston-blue-900 border-1 rounded-lg px-10 py-3'
     >
       <article className=' flex items-center gap-5'>
@@ -53,12 +54,7 @@ export const ChipSkill: React.FC<ChipSkillProps> = ({
       />
       {inProgress ? (
         <Tooltip content='In progress'>
-          <Spinner
-            color='default'
-            size='sm'
-            labelColor='foreground'
-            className='opacity-25'
-          />
+          <Spinner size='sm' color='warning' />
         </Tooltip>
       ) : (
         ''
