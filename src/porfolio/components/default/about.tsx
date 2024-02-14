@@ -1,9 +1,18 @@
 import { User } from '@nextui-org/react';
 import imageUser from '@images/me.webp';
+import { NavProps } from 'src/interface/nav.interface';
 
-export const AboutDefault = () => {
+export const AboutDefault: React.FC<NavProps> = ({
+  changeActiveLink = () => {},
+}) => {
   return (
-    <div id='about' className='h-[100vh] dark:bg-black bg-white pt-20 px-6'>
+    <div
+      id='about'
+      className='h-[100vh] dark:bg-black bg-white pt-20 px-6'
+      onMouseEnter={() => {
+        changeActiveLink('about');
+      }}
+    >
       <div className='flex justify-center flex-wrap h-[90vh]'>
         <div className='md:w-full lg:w-1/2 flex justify-between flex-wrap px-28 pt-10'>
           <div className='w-full flex justify-start'>

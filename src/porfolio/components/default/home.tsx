@@ -1,11 +1,20 @@
 import { Button, Link } from '@nextui-org/react';
+import { NavProps } from '@interface/nav.interface';
 
-export const HomeDefault = () => {
+export const HomeDefault: React.FC<NavProps> = ({
+  changeActiveLink = () => {},
+}) => {
   return (
     <div className='h-[100vh] '>
       <div
         id='home'
-        className=' flex dark:justify-start justify-end items-center h-full bg-cover bg-center relative bg-light-home-bg-default dark:bg-dark-home-bg-default'
+        className=' flex dark:justify-start
+        justify-end items-center h-full
+        bg-cover bg-center relative
+        bg-light-home-bg-default dark:bg-dark-home-bg-default'
+        onMouseEnter={() => {
+          changeActiveLink('home');
+        }}
       >
         <section
           id='me'
@@ -14,8 +23,8 @@ export const HomeDefault = () => {
           <div className='flex-wrap  scale-up-top-left card-blur pl-10 pr-10 py-16 bg-white-alpha dark:bg-black-alpha rounded-xl border-boston-blue-800 border-solid border'>
             <h1
               className='font-thin  bg-none 
-             dark:text-boston-blue-50
-             text-boston-blue-800 font-default
+              dark:text-boston-blue-50
+              text-boston-blue-800 font-default
               text-8xl text-justify'
             >
               <span className='font-bold dark:text-boston-blue-400 text-boston-blue-600'>
@@ -65,12 +74,12 @@ export const HomeDefault = () => {
           <div className='flex sm:w-full sm:min-md md:w-20 lg:w-60 gap-2 flex-wrap justify-center'>
             <div
               className='bg-white-alpha
-               dark:bg-black-alpha
-                rounded-xl
-               border-boston-blue-800
-                border-solid border
-                w-60 sm:w-40 
-                card-blur h-24 scale-up-top-right flex items-center justify-center'
+              dark:bg-black-alpha
+              rounded-xl
+              border-boston-blue-800
+              border-solid border
+              w-60 sm:w-40 
+              card-blur h-24 scale-up-top-right flex items-center justify-center'
             >
               <a
                 href='https://www.linkedin.com/in/daniel-felipe-zamora-ortiz/'

@@ -1,16 +1,18 @@
 import { Navbar, NavbarContent, NavbarItem, Link } from '@nextui-org/react';
 import { useTheme } from 'next-themes';
-import { useState } from 'react';
+import { NavProps } from '@interface/nav.interface';
 
-export const NavbarDefault = () => {
-  const [linkActive, setLinkActive] = useState<string>('resume');
+export const NavbarDefault: React.FC<NavProps> = ({
+  linkActive,
+  setLinkActive,
+}) => {
   const { theme, setTheme } = useTheme();
   const changeActiveLink = (activeLink: string) => {
-    setLinkActive(activeLink);
+    if (setLinkActive) setLinkActive(activeLink);
   };
 
   return (
-    <Navbar className='navbar-default dark:bg-black bg-white-alpha shadow-2xl shadow-none'>
+    <Navbar className='navbar-default dark:bg-black bg-white-alpha shadow-none'>
       <NavbarContent
         className={`hidden sm:flex gap-4 font-default font-semibold`}
         justify='center'
@@ -18,7 +20,8 @@ export const NavbarDefault = () => {
         <NavbarItem>
           <Link
             onClick={() => changeActiveLink('home')}
-            className={`dark:text-boston-blue-100 text-boston-blue-900 text-1xl tracking-[.15em] 
+            className={`dark:text-boston-blue-100 text-boston-blue-900 text-1xl 
+            tracking-[.15em]  
             cursor-pointer px-3 rounded-md ${
               linkActive === 'home' ? 'border-active-link' : ''
             }`}
@@ -31,8 +34,9 @@ export const NavbarDefault = () => {
           <Link
             onClick={() => changeActiveLink('about')}
             className={`dark:text-boston-blue-100
-             text-boston-blue-900 
-              text-1xl tracking-[.15em] 
+            text-boston-blue-900 
+              text-1xl tracking-[.15em]
+               
               cursor-pointer hover:bg-te px-3 rounded-md ${
                 linkActive === 'about' ? 'border-active-link' : ''
               }`}
@@ -46,7 +50,8 @@ export const NavbarDefault = () => {
           <Link
             onClick={() => changeActiveLink('resume')}
             className={`dark:text-boston-blue-100 text-boston-blue-900 
-            text-1xl tracking-[.15em] 
+            text-1xl tracking-[.15em]
+             
             cursor-pointer hover:bg-te px-3 rounded-md ${
               linkActive === 'resume' ? 'border-active-link' : ''
             }`}

@@ -2,8 +2,11 @@ import { ChipSkill } from '@components/chip-skill';
 import { Title } from '@components/title';
 import { TimeLine } from '@components/time-line';
 import { PersonalSkills } from '@components/personal-skills';
+import { NavProps } from 'src/interface/nav.interface';
 
-export const ResumeDefault = () => {
+export const ResumeDefault: React.FC<NavProps> = ({
+  changeActiveLink = () => {},
+}) => {
   return (
     <div
       className='sm:h-[140vh] lg:h-[100vh] pt-20 px-6
@@ -14,6 +17,9 @@ export const ResumeDefault = () => {
       <div
         id='resume'
         className='w-full grid md:grid-cols-2 lg:grid-cols-3 px-5'
+        onMouseEnter={() => {
+          changeActiveLink('resume');
+        }}
       >
         <div className=''>
           <Title title='SOFTWARE SKILL'></Title>

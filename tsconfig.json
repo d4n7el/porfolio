@@ -13,7 +13,8 @@
       "@styles/*": ["./src/porfolio/styles/*"],
       "@images/*": ["./src/assets/images/*"],
       "@components-porfolio/*": ["./src/porfolio/components/*"],
-      "@components-views/*": ["./src/porfolio/views/*"]
+      "@components-views/*": ["./src/porfolio/views/*"],
+      "@interface/*": ["./src/interface/*"]
     },
 
     /* Bundler mode */
