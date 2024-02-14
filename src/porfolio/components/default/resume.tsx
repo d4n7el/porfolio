@@ -86,7 +86,7 @@ export const ResumeDefault: React.FC<NavProps> = ({
         </div>
         <div
           className='w-12/12 md:w-10/12
-           lg:w-10/12 xl:w-10/12 mt-10 sm:mt-0 px-5 sm:px-0'
+           lg:w-10/12 xl:w-10/12 mt-10 sm:mt-0'
         >
           <Title title='EXPERIENCE'></Title>
           <section className='mt-10 w-12/12 flex flex-wrap gap-2 '>
