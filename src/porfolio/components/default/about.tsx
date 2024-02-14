@@ -31,18 +31,17 @@ export const AboutDefault = () => {
             </div>
             <article>
               <p className='text-justify dark:text-boston-blue-50  text-boston-blue-900 md:mt-4'>
-                Es simplemente el texto de relleno de las imprentas y archivos
-                de texto. Lorem Ipsum ha sido el texto de relleno estándar de
-                las industrias desde el año 1500, cuando un impresor (N. del T.
-                persona que se dedica a la imprenta) desconocido usó una galería
-                de textos y los mezcló de tal manera que logró hacer un libro de
-                textos especimen. No sólo sobrevivió 500 años, sino que tambien
-                ingresó como texto de relleno en documentos electrónicos,
-                quedando esencialmente igual al original. Fue popularizado en
-                los 60s con la creación de las hojas "Letraset", las cuales
-                contenian pasajes de Lorem Ipsum, y más recientemente con
-                software de autoedición, como por ejemplo Aldus PageMaker, el
-                cual incluye versiones de Lorem Ipsum.
+                Programmer with solid technical training and extensive
+                experience in web development. Expert in languages such as
+                JavaScript, PHP and Ruby, as well as frameworks such as React,
+                React Native, Angular and Ruby On Rails, he has demonstrated
+                skill in planning, designing and building user interface
+                systems. His career includes roles in companies such as
+                Capmotion Technologies, Play Us Media and Magnetrón S.A.S, where
+                he stood out for his ability to implement innovative solutions
+                and maintain quality standards. With an academic background
+                supported by the SENA National Learning Service, brings a solid
+                and versatile approach to any web development project.
               </p>
             </article>
           </div>
