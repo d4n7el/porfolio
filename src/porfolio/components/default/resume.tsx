@@ -9,14 +9,14 @@ export const ResumeDefault: React.FC<NavProps> = ({
 }) => {
   return (
     <div
-      className='sm:h-[140vh] lg:h-[100vh] pt-20 px-6
+      className='sm:h-[140vh] lg:h-[100vh] 
       dark:bg-black bg-white
       dark:border-white-alpha-light border-boston-blue-500
-      border-1'
+      border-t-1'
     >
       <div
         id='resume'
-        className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-1 sm:px-5'
+        className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-20 px-1 sm:px-5 md:px-6'
         onMouseEnter={() => {
           changeActiveLink('resume');
         }}

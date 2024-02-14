@@ -6,13 +6,13 @@ export const HomeDefault: React.FC<NavProps> = ({
   changeActiveLink = () => {},
 }) => {
   return (
-    <div className='sm:h-auto md:h-[100vh] overflow-hidden'>
+    <div className='w-screen md:h-[100vh] overflow-hidden '>
       <div
         id='home'
         className='flex dark:justify-start
         justify-end items-center h-full
         bg-cover bg-center relative
-        bg-light-home-bg-default dark:bg-dark-home-bg-default pt-7 sm:pt-0 pb-10 sm:pb-0'
+        bg-light-home-bg-default dark:bg-dark-home-bg-default pt-12 sm:pt-0 pb-10 sm:pb-0'
         onMouseEnter={() => {
           changeActiveLink('home');
         }}
@@ -26,7 +26,7 @@ export const HomeDefault: React.FC<NavProps> = ({
           <div
             className='flex-wrap
             scale-up-top-left
-            card-blur bg-white-alpha
+            card-blur bg-white-alpha-light
             dark:bg-black-alpha 
             border-boston-blue-800
             md:rounded-xl

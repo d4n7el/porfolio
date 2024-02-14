@@ -3,7 +3,7 @@ import { CardContactProps } from 'src/interface/card-contact.interface';
 export const CardContact: React.FC<CardContactProps> = ({ icon, url }) => {
   return (
     <div
-      className='bg-white-alpha
+      className='bg-white-alpha-light
 			dark:bg-black-alpha
 			rounded-xl
 			border-boston-blue-800
