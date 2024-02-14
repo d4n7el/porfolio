@@ -40,7 +40,7 @@ export const ResumeDefault: React.FC<NavProps> = ({
             <ChipSkill
               icon={<span className='icon-[mdi--github]'></span>}
               iconLabel='Git'
-              defaultValue={70}
+              defaultValue={90}
             ></ChipSkill>
             <ChipSkill
               icon={<span className='icon-[devicon--html5]'></span>}
@@ -60,7 +60,7 @@ export const ResumeDefault: React.FC<NavProps> = ({
             <ChipSkill
               icon={<span className='icon-[devicon--tailwindcss]'></span>}
               iconLabel='Tailwind'
-              defaultValue={70}
+              defaultValue={85}
             ></ChipSkill>
             <ChipSkill
               icon={
