@@ -53,12 +53,12 @@ export const TimeLine: React.FC<TimeLineProps> = ({
         <CardHeader className='justify-between'>
           <div className='flex gap-5'>
             <div className='flex flex-col gap-1 items-start justify-center'>
-              <h4 className='text-small font-semibold leading-none dark:text-boston-blue-400 text-boston-blue-900 '>
+              <h2 className='text-small font-semibold leading-none dark:text-boston-blue-400 text-boston-blue-900 '>
                 {title}
-              </h4>
-              <h5 className='text-small tracking-tight text-left  dark:text-boston-blue-50 text-boston-blue-900 '>
+              </h2>
+              <span className='text-small tracking-tight text-left  dark:text-boston-blue-50 text-boston-blue-900 '>
                 {subtitle}
-              </h5>
+              </span>
               {htmlContent}
             </div>
           </div>
@@ -68,12 +68,14 @@ export const TimeLine: React.FC<TimeLineProps> = ({
         </CardBody>
         <CardFooter className='gap-3'>
           <div className='flex gap-1 items-center'>
-            <span className='icon-[clarity--date-solid] font-semibold text-small dark:text-white text-boston-blue-500 '></span>
-            <p className=' text-default-400 text-small'>{initialDate}</p>
+            <span className='icon-[clarity--date-solid] font-semibold text-small dark:text-boston-blue-300  text-boston-blue-900 '></span>
+            <p className='text-small dark:text-white text-boston-blue-500'>
+              {initialDate}
+            </p>
           </div>
           <div className='flex gap-1 items-center'>
-            <span className='icon-[clarity--date-solid] font-semibold text-small dark:text-white text-boston-blue-500 '></span>
-            <p className=' text-default-400 text-small'>
+            <span className='icon-[clarity--date-solid] font-semibold text-small dark:text-boston-blue-300 text-boston-blue-900 '></span>
+            <p className='text-small dark:text-white text-boston-blue-500'>
               {finalDate ?? 'At the moment.'}
             </p>
           </div>

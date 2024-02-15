@@ -4,21 +4,19 @@ import { TimeLine } from '@components/time-line';
 import { PersonalSkills } from '@components/personal-skills';
 import { NavProps } from 'src/interface/nav.interface';
 
-export const ResumeDefault: React.FC<NavProps> = ({
-  changeActiveLink = () => {},
-}) => {
+const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
     <div
-      className='sm:h-[140vh] lg:h-[100vh] 
+      className='sm:h-auto lg:h-[100vh] 
       dark:bg-black bg-white
       dark:border-white-alpha-light border-boston-blue-500
-      border-t-1 p-10 sm:p-0'
+      border-t-1 p-10 md:p-0 xl:px-10 2xl:px-40'
     >
       <div
         id='resume'
         className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-20 px-1 sm:px-5 md:px-6'
         onMouseEnter={() => {
-          changeActiveLink('resume');
+          changeActiveLink('#resume');
         }}
       >
         <div
@@ -86,7 +84,7 @@ export const ResumeDefault: React.FC<NavProps> = ({
         </div>
         <div
           className='w-12/12 md:w-10/12
-           lg:w-10/12 xl:w-10/12 mt-10 sm:mt-0'
+           lg:w-10/12 xl:w-10/12 mt-10 md:mt-0'
         >
           <Title title='EXPERIENCE'></Title>
           <section className='mt-10 w-12/12 flex flex-wrap gap-2 '>
@@ -116,8 +114,9 @@ export const ResumeDefault: React.FC<NavProps> = ({
           </section>
         </div>
         <div
-          className='w-11/12  md:w-10/12
-           lg:w-10/12 xl:w-10/12 mt-10 sm:mt-0 mb-10 sm:mb-0'
+          className='w-11/12 md:w-full
+          lg:w-10/12 xl:w-10/12 mt-10 lg:mt-0 mb-10 sm:mb-0
+          pb-16 lg:pb-0'
         >
           <Title title='PERSONAL SKILLS'></Title>
           <section className='mt-10 flex flex-wrap gap-3'>
@@ -170,3 +169,5 @@ export const ResumeDefault: React.FC<NavProps> = ({
     </div>
   );
 };
+
+export default ResumeDefault;

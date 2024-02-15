@@ -1,14 +1,19 @@
-import { HomeDefault } from '@components-porfolio/default/home';
-import { AboutDefault } from '@components-porfolio/default/about';
-import { ResumeDefault } from '@components-porfolio/default/resume';
 import { NavbarDefault } from '@components-porfolio/default/navbar';
-import { useState } from 'react';
+import ResumeDefault from '@components-porfolio/default/resume';
+import AboutDefault from '@components-porfolio/default/about';
+import HomeDefault from '@components-porfolio/default/home';
+import { useEffect, useState } from 'react';
 
 export const PortfolioDefaultView = () => {
-  const [linkActive, setLinkActive] = useState<string>('home');
+  const hash = window.location.hash;
+  const [linkActive, setLinkActive] = useState<string>(hash);
   const changeActiveLink = (linkActive: string) => {
     setLinkActive(linkActive);
   };
+
+  useEffect(() => {
+    console.log(linkActive);
+  }, [linkActive]);
 
   return (
     <div>
@@ -16,9 +21,9 @@ export const PortfolioDefaultView = () => {
         linkActive={linkActive}
         setLinkActive={setLinkActive}
       ></NavbarDefault>
-      <HomeDefault changeActiveLink={changeActiveLink}></HomeDefault>
-      <AboutDefault changeActiveLink={changeActiveLink}></AboutDefault>
-      <ResumeDefault changeActiveLink={changeActiveLink}></ResumeDefault>
+      <HomeDefault changeActiveLink={changeActiveLink} />
+      <AboutDefault changeActiveLink={changeActiveLink} />
+      <ResumeDefault changeActiveLink={changeActiveLink} />
     </div>
   );
 };

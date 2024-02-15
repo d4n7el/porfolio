@@ -19,7 +19,7 @@ export const ChipSkill: React.FC<ChipSkillProps> = ({
       flex justify-between items-center 
       gap-5
       bg-white dark:bg-transparent
-    dark:border-white-alpha-light border-boston-blue-900 border-1 rounded-lg px-10 py-3'
+      dark:border-white-alpha-light border-boston-blue-900 border-1 rounded-lg pl-2 pr-5 py-3'
     >
       <article className=' flex items-center gap-5'>
         <Chip
@@ -39,7 +39,7 @@ export const ChipSkill: React.FC<ChipSkillProps> = ({
         minValue={0}
         defaultValue={defaultValue}
         aria-label='react'
-        className='w-80 text-black'
+        className='text-black'
         classNames={{
           base: 'max-w-md gap-3',
           track: 'border-s-bg-black',

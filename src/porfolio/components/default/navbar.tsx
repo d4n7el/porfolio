@@ -19,17 +19,14 @@ export const NavbarDefault: React.FC<NavProps> = ({
     {
       label: 'Home',
       url: '#home',
-      key: 'home',
     },
     {
       label: 'About',
       url: '#about',
-      key: 'about',
     },
     {
       label: 'Resume',
       url: '#resume',
-      key: 'resume',
     },
   ];
 
@@ -41,13 +38,13 @@ export const NavbarDefault: React.FC<NavProps> = ({
   };
 
   const menuItemsElements = menuItems.map((item) => (
-    <NavbarItem key={item.key}>
+    <NavbarItem key={item.url}>
       <Link
-        onClick={() => changeActiveLink(item.key)}
+        onClick={() => changeActiveLink(item.url)}
         className={`dark:text-boston-blue-100 text-boston-blue-900 text-1xl 
         tracking-[.15em]  
         cursor-pointer px-3 rounded-md ${
-          linkActive === item.key ? 'border-active-link' : ''
+          linkActive === item.url ? 'border-active-link' : ''
         }`}
         href={item.url}
       >
@@ -91,11 +88,11 @@ export const NavbarDefault: React.FC<NavProps> = ({
       <NavbarContent justify='end'>
         <NavbarItem className='h-6 w-6 flex cursor-pointer'>
           {theme === 'light' ? (
-            <button onClick={() => setTheme('dark')}>
+            <button aria-label='theme-dark' onClick={() => setTheme('dark')}>
               <span className='icon-[icon-park-solid--dark-mode] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
             </button>
           ) : (
-            <button onClick={() => setTheme('light')}>
+            <button aria-label='theme-light' onClick={() => setTheme('light')}>
               <span className='icon-[material-symbols-light--dark-mode-rounded] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
             </button>
           )}
@@ -103,9 +100,9 @@ export const NavbarDefault: React.FC<NavProps> = ({
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.key}-${index}`}>
+          <NavbarMenuItem key={`${item.url}-${index}`}>
             <Link
-              onClick={() => changeActiveLink(item.key)}
+              onClick={() => changeActiveLink(item.url)}
               color={
                 index === 2
                   ? 'primary'
@@ -114,7 +111,7 @@ export const NavbarDefault: React.FC<NavProps> = ({
                   : 'foreground'
               }
               className={`w-full dark:text-boston-blue-100 text-boston-blue-900 ${
-                linkActive === item.key
+                linkActive === item.url
                   ? 'dark:text-boston-blue-100 text-boston-blue-900'
                   : 'dark:text-boston-blue-500 text-boston-blue-500'
               }`}

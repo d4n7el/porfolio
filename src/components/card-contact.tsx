@@ -1,6 +1,10 @@
 import { CardContactProps } from 'src/interface/card-contact.interface';
 
-export const CardContact: React.FC<CardContactProps> = ({ icon, url }) => {
+export const CardContact: React.FC<CardContactProps> = ({
+  icon,
+  url,
+  arialLabel,
+}) => {
   return (
     <div
       className='bg-white-alpha-light
@@ -9,9 +13,10 @@ export const CardContact: React.FC<CardContactProps> = ({ icon, url }) => {
 			border-boston-blue-800
 			border-solid border
 			w-20 sm:w-40
-			card-blur h-24 scale-up-top-right flex items-center justify-center'
+			card-blur h-24 flex items-center justify-center'
     >
       <a
+        aria-label={arialLabel}
         href={url}
         target='blank'
         className='cursor-pointer dark:text-boston-blue-100 text-boston-blue-800'

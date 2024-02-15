@@ -1,21 +1,19 @@
 import { User } from '@nextui-org/react';
-import imageUser from '@images/me.webp';
+import imageUser from '@images/me.png';
 import { NavProps } from 'src/interface/nav.interface';
 import { Hobbies } from '@components/hobbies';
 
-export const AboutDefault: React.FC<NavProps> = ({
-  changeActiveLink = () => {},
-}) => {
+const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
     <div
       id='about'
       className='w-screen sm:h-[100vh] dark:bg-black bg-white pt-5 sm:pt-10 px-6'
       onMouseEnter={() => {
-        changeActiveLink('about');
+        changeActiveLink('#about');
       }}
     >
-      <div className='flex justify-center flex-wrap sm:h-[90vh] py-10 sm:py-0'>
-        <div className='md:w-full lg:w-1/2 flex justify-between flex-wrap px-5 sm:px-28 pt-10'>
+      <div className='flex justify-center flex-wrap sm:h-[90vh] py-10 sm:py-0 lg:px-40'>
+        <div className='md:w-full lg:w-1/2 flex flex-wrap px-5 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div className='w-full flex justify-start'>
             <section className='divide-y-2 divide-boston-blue-700'>
               <h2 className=' text-4xl text-left dark:text-boston-blue-50 text-boston-blue-500  '>
@@ -29,7 +27,7 @@ export const AboutDefault: React.FC<NavProps> = ({
             </section>
           </div>
           <div className='w-full flex justify-start flex-wrap'>
-            <div className='w-full flex justify-start my-9 sm:my-0 '>
+            <div className='w-full flex justify-start my-9 sm:my-0'>
               <User
                 className='dark:border-white-alpha-light border-boston-blue-500  border-1 h-fit p-4 dark:text-boston-blue-50 text-boston-blue-900'
                 name='Daniel Zamora'
@@ -62,7 +60,7 @@ export const AboutDefault: React.FC<NavProps> = ({
             </article>
           </div>
         </div>
-        <div className='md:w-full lg:w-1/2 flex justify-between flex-wrap px-5 pt-10'>
+        <div className='md:w-full lg:w-1/2 flex md:justify-start lg:justify-center  flex-wrap px-5 pt-10'>
           <div>
             <section className='divide-y-2 divide-boston-blue-700'>
               <h2 className=' text-4xl text-left dark:text-boston-blue-50 text-boston-blue-500  '>
@@ -108,3 +106,5 @@ export const AboutDefault: React.FC<NavProps> = ({
     </div>
   );
 };
+
+export default AboutDefault;
