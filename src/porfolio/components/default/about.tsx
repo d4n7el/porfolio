@@ -2,6 +2,7 @@ import { User } from '@nextui-org/react';
 import imageUser from '@images/me.png';
 import { NavProps } from 'src/interface/nav.interface';
 import { Hobbies } from '@components/hobbies';
+import { Title } from 'src/components/title';
 
 const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
@@ -16,14 +17,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         <div className='md:w-full lg:w-1/2 flex flex-wrap px-5 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div className='w-full flex justify-start'>
             <section className='divide-y-2 divide-boston-blue-700'>
-              <h2 className=' text-4xl text-left dark:text-boston-blue-50 text-boston-blue-500  '>
-                ABOUT
-              </h2>
-              <div className='mt-3'>
-                <pre className=' text-1xl mt-2 dark:text-boston-blue-50 text-boston-blue-900'>
-                  dfzortiz@gmail.com
-                </pre>
-              </div>
+              <Title title='ABOUT' subtitle='dfzortiz@gmail.com'></Title>
             </section>
           </div>
           <div className='w-full flex justify-start flex-wrap'>
@@ -63,10 +57,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         <div className='md:w-full lg:w-1/2 flex md:justify-start lg:justify-center  flex-wrap px-5 pt-10'>
           <div>
             <section className='divide-y-2 divide-boston-blue-700'>
-              <h2 className=' text-4xl text-left dark:text-boston-blue-50 text-boston-blue-500  '>
-                HOBBIES & INTERESTS
-              </h2>
-              <div className='mt-3'></div>
+              <Title title='HOBBIES & INTERESTS'></Title>
             </section>
             <section className='grid grid-cols-2 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-2 w-full gap-2 sm:gap-4 mt-8'>
               <Hobbies
