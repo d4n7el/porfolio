@@ -6,7 +6,7 @@ import './App.css';
 export const App = () => {
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute='class' defaultTheme='dark'>
+      <NextThemesProvider attribute='class' defaultTheme='light'>
         <SelectPortfolioView></SelectPortfolioView>
       </NextThemesProvider>
     </NextUIProvider>

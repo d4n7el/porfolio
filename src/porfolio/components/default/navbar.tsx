@@ -64,16 +64,15 @@ export const NavbarDefault: React.FC<NavProps> = ({
           icon={
             isMenuOpen ? (
               <span
-                className='icon-[material-symbols-light--close-rounded] 
-                text-2xl dark:text-boston-blue-100
-                text-boston-blue-700'
+                className='icon-[iconamoon--close] text-2xl dark:text-boston-blue-100
+              text-boston-blue-700 animate-expand-horizontally'
               ></span>
             ) : (
               <span
                 className='icon-[tabler--menu] 
                 text-2xl 
                 dark:text-boston-blue-100
-                text-boston-blue-700'
+                text-boston-blue-700 animate-expand-vertically'
               ></span>
             )
           }
@@ -87,29 +86,31 @@ export const NavbarDefault: React.FC<NavProps> = ({
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem className='h-6 w-6 flex cursor-pointer'>
-          {theme === 'light' ? (
-            <button aria-label='theme-dark' onClick={() => setTheme('dark')}>
-              <span className='icon-[icon-park-solid--dark-mode] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
+          {theme === 'dark' ? (
+            <button aria-label='theme-dark' onClick={() => setTheme('light')}>
+              <span
+                className='icon-[icon-park-solid--dark-mode]
+                h-6 w-6 dark:text-boston-blue-100
+                text-boston-blue-900
+                animate-spin-clockwise'
+              ></span>
             </button>
           ) : (
-            <button aria-label='theme-light' onClick={() => setTheme('light')}>
-              <span className='icon-[material-symbols-light--dark-mode-rounded] h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900'></span>
+            <button aria-label='theme-light' onClick={() => setTheme('dark')}>
+              <span
+                className='icon-[tdesign--mode-dark]
+                h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900
+                animate-spin-counter-clockwise'
+              ></span>
             </button>
           )}
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.url}-${index}`}>
+        {menuItems.map((item) => (
+          <NavbarMenuItem key={`${item.url}`}>
             <Link
               onClick={() => changeActiveLink(item.url)}
-              color={
-                index === 2
-                  ? 'primary'
-                  : index === menuItems.length - 1
-                  ? 'danger'
-                  : 'foreground'
-              }
               className={`w-full dark:text-boston-blue-100 text-boston-blue-900 ${
                 linkActive === item.url
                   ? 'dark:text-boston-blue-100 text-boston-blue-900'

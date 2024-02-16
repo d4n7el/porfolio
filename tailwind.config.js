@@ -1,5 +1,6 @@
 const { nextui } = require('@nextui-org/react');
 const { addDynamicIconSelectors } = require('@iconify/tailwind');
+import animations from '@midudev/tailwind-animations';
 
 export default {
   content: [
@@ -57,5 +58,5 @@ export default {
       },
     },
   },
-  plugins: [nextui(), addDynamicIconSelectors()],
+  plugins: [nextui(), addDynamicIconSelectors(), animations],
 };
