@@ -8,12 +8,13 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
     <div
       id='about'
-      className='w-screen sm:h-[100vh] dark:bg-black bg-white pt-5 sm:pt-10 px-6'
+      className='sm:h-[auto] dark:bg-black bg-white pt-5 sm:pt-10 px-6 w-full
+      flex justify-center'
       onMouseEnter={() => {
         changeActiveLink('#about');
       }}
     >
-      <div className='flex justify-center flex-wrap sm:h-[90vh] py-10 sm:py-0 lg:px-40'>
+      <div className='flex justify-center flex-wrap sm:h-[90vh] py-10 sm:py-0 md:w-5/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6'>
         <div className='md:w-full lg:w-1/2 flex flex-wrap px-5 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div className='w-full flex justify-start'>
             <section className='divide-y-2 divide-boston-blue-700'>
@@ -21,9 +22,12 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             </section>
           </div>
           <div className='w-full flex justify-start flex-wrap'>
-            <div className='w-full flex justify-start my-9 sm:my-0'>
+            <div className='w-full flex justify-start my-9 sm:my-0 '>
               <User
-                className='dark:border-white-alpha-light border-boston-blue-500  border-1 h-fit p-4 dark:text-boston-blue-50 text-boston-blue-900'
+                className='dark:border-white-alpha-light mt-16
+                border-boston-blue-500 
+                border-1 h-fit p-4
+                dark:text-boston-blue-50 text-boston-blue-900'
                 name='Daniel Zamora'
                 description='Software Developer'
                 avatarProps={{
@@ -31,8 +35,8 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                 }}
               />
             </div>
-            <article>
-              <p className='text-justify dark:text-boston-blue-50  text-boston-blue-900 md:mt-4'>
+            <article className='mt-6'>
+              <p className='text-justify dark:text-boston-blue-50  text-boston-blue-900 md:mt-4 '>
                 Programmer with solid technical training and extensive
                 experience in web development. Expert in languages such as
                 JavaScript, PHP and Ruby, as well as frameworks such as React,
@@ -48,7 +52,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             </article>
           </div>
           <div className='w-full '>
-            <article className='flex justify-start flex-wrap dark:text-boston-blue-50 text-boston-blue-900 mt-10 sm:mt-0'>
+            <article className='flex justify-start flex-wrap dark:text-boston-blue-50 text-boston-blue-900 mt-10 sm:mt-10'>
               <span className='w-full h-fit'>Manizales / Caldas </span>
               <span className='w-full h-fit'>Colombia.</span>
             </article>
