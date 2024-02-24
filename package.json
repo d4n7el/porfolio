@@ -5,7 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode dev",
+    "prod": "vite --mode production",
     "build": "tsc && vite build ",
     "build-prod": "tsc && vite build --mode production",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -14,11 +15,14 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@firebase/database": "^1.0.3",
     "@midudev/tailwind-animations": "^0.0.7",
+    "firebase": "^10.8.0",
     "framer-motion": "^11.0.3",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "reactfire": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.181",

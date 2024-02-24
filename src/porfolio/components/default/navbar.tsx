@@ -10,6 +10,7 @@ import {
 import { useTheme } from 'next-themes';
 import { NavProps } from '@interface/nav.interface';
 import { useState } from 'react';
+import { VisitCount } from 'src/components/visit-count';
 
 export const NavbarDefault: React.FC<NavProps> = ({
   linkActive,
@@ -32,6 +33,7 @@ export const NavbarDefault: React.FC<NavProps> = ({
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+
   const changeActiveLink = (activeLink: string) => {
     if (setLinkActive) setLinkActive(activeLink);
     if (isMenuOpen) setIsMenuOpen(false);
@@ -105,6 +107,7 @@ export const NavbarDefault: React.FC<NavProps> = ({
             </button>
           )}
         </NavbarItem>
+        <VisitCount></VisitCount>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item) => (
