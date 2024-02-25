@@ -1,6 +1,5 @@
 {
   "name": "portfolio",
-  "homepage": "https://github.io/d4n7el/porfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,14 +14,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@firebase/database": "^1.0.3",
     "@midudev/tailwind-animations": "^0.0.7",
-    "firebase": "^10.8.0",
+    "firebase": "^9.23.0",
     "framer-motion": "^11.0.3",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "reactfire": "^4.0.0-rc.2"
+    "reactfire": "4.2.3"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.181",
