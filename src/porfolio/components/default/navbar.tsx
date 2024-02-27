@@ -11,22 +11,26 @@ import { useTheme } from 'next-themes';
 import { NavProps } from '@interface/nav.interface';
 import { useState } from 'react';
 import { VisitCount } from 'src/components/visit-count';
+import { useTranslation } from 'react-i18next';
+import { SelectLanguage } from '@components/select-languages/select-language';
 
 export const NavbarDefault: React.FC<NavProps> = ({
   linkActive,
   setLinkActive,
 }) => {
+  const [t] = useTranslation('translation');
+
   const menuItems = [
     {
-      label: 'Home',
+      label: t('home'),
       url: '#home',
     },
     {
-      label: 'About',
+      label: t('about'),
       url: '#about',
     },
     {
-      label: 'Resume',
+      label: t('resume'),
       url: '#resume',
     },
   ];
@@ -107,6 +111,7 @@ export const NavbarDefault: React.FC<NavProps> = ({
             </button>
           )}
         </NavbarItem>
+        <SelectLanguage></SelectLanguage>
         <VisitCount></VisitCount>
       </NavbarContent>
       <NavbarMenu>

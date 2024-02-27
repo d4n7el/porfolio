@@ -1,8 +1,10 @@
 import { NavProps } from '@interface/nav.interface';
 import { Button, Link } from '@nextui-org/react';
 import { CardContact } from '@components/card-contact';
+import { useTranslation } from 'react-i18next';
 
 const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
+  const [t] = useTranslation('translation');
   return (
     <div
       className='flex dark:justify-start
@@ -35,16 +37,16 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
               text-8xl text-justify'
           >
             <span className='font-bold dark:text-boston-blue-400 text-boston-blue-600'>
-              Hi
+              {t('hi')}
             </span>
-            <span>, I'm</span>
+            <span>, {t('iam')}</span>
           </h1>
           <h2
             className='font-thin text-7xl text-justify
               dark:text-boston-blue-50
               text-boston-blue-800 font-default'
           >
-            Software Developer
+            {t('softwareDeveloper')}
           </h2>
           <pre
             className='text-justify mt-3 text-2xl 
@@ -68,7 +70,7 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
               variant='bordered'
               className=' text-boston-blue-900 dark:text-boston-blue-200 border-light-primary sm:px-20'
             >
-              About
+              {t('about')}
             </Button>
             <Button
               aria-label='go-resume'
@@ -78,7 +80,7 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
               variant='bordered'
               className='text-boston-blue-900 dark:text-boston-blue-200 border-light-primary sm:px-20'
             >
-              Resume
+              {t('resume')}
             </Button>
           </section>
         </div>

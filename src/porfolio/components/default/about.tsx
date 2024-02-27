@@ -3,8 +3,10 @@ import imageUser from '@images/me.png';
 import { NavProps } from 'src/interface/nav.interface';
 import { Hobbies } from '@components/hobbies';
 import { Title } from 'src/components/title';
+import { useTranslation } from 'react-i18next';
 
 const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
+  const [t] = useTranslation('translation');
   return (
     <div
       id='about'
@@ -18,7 +20,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         <div className='md:w-full lg:w-1/2 flex flex-wrap px-5 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div className='w-full flex justify-start'>
             <section className='divide-y-2 divide-boston-blue-700'>
-              <Title title='ABOUT' subtitle='dfzortiz@gmail.com'></Title>
+              <Title title={t('about')} subtitle='dfzortiz@gmail.com'></Title>
             </section>
           </div>
           <div className='w-full flex justify-start flex-wrap'>
@@ -29,7 +31,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                 border-1 h-fit p-4
                 dark:text-boston-blue-50 text-boston-blue-900'
                 name='Daniel Zamora'
-                description='Software Developer'
+                description={t('softwareDeveloper')}
                 avatarProps={{
                   src: imageUser,
                 }}
@@ -37,17 +39,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             </div>
             <article className='mt-6'>
               <p className='text-justify dark:text-boston-blue-50  text-boston-blue-900 md:mt-4 '>
-                Programmer with solid technical training and extensive
-                experience in web development. Expert in languages such as
-                JavaScript, PHP and Ruby, as well as frameworks such as React,
-                React Native, Angular and Ruby On Rails, he has demonstrated
-                skill in planning, designing and building user interface
-                systems. His career includes roles in companies such as
-                Capmotion Technologies, Play Us Media and Magnetrón S.A.S, where
-                he stood out for his ability to implement innovative solutions
-                and maintain quality standards. With an academic background
-                supported by the SENA National Learning Service, brings a solid
-                and versatile approach to any web development project.
+                {t('paragraphWithMe')}
               </p>
             </article>
           </div>
@@ -61,7 +53,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         <div className='md:w-full lg:w-1/2 flex md:justify-start lg:justify-center  flex-wrap px-5 pt-10'>
           <div>
             <section className='divide-y-2 divide-boston-blue-700'>
-              <Title title='HOBBIES & INTERESTS'></Title>
+              <Title title={t('hobbies&interests')}></Title>
             </section>
             <section className='grid grid-cols-2 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-2 w-full gap-2 sm:gap-4 mt-8'>
               <Hobbies
