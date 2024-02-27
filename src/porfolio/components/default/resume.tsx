@@ -3,8 +3,11 @@ import { Title } from '@components/title';
 import { TimeLine } from '@components/time-line';
 import { PersonalSkills } from '@components/personal-skills';
 import { NavProps } from 'src/interface/nav.interface';
+import { useTranslation } from 'react-i18next';
 
 const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
+  const [t] = useTranslation('translation');
+
   return (
     <div
       className='sm:h-auto lg:h-[100vh] 
@@ -23,7 +26,7 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
           className='w-12/12  md:w-10/12
            lg:w-10/12 xl:w-10/12'
         >
-          <Title title='SOFTWARE SKILL'></Title>
+          <Title title={t('softwareSkills')}></Title>
           <section className='flex flex-wrap gap-3 mt-10 '>
             <ChipSkill
               icon={<span className='icon-[logos--react]'></span>}
@@ -86,7 +89,7 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
           className='w-12/12 md:w-10/12
            lg:w-10/12 xl:w-10/12 mt-10 md:mt-0'
         >
-          <Title title='EXPERIENCE'></Title>
+          <Title title={t('experience')}></Title>
           <section className='mt-10 w-12/12 flex flex-wrap gap-2 '>
             <TimeLine
               title='Capmotion Technologies'
@@ -118,47 +121,47 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
           lg:w-10/12 xl:w-10/12 mt-10 lg:mt-0 mb-10 sm:mb-0
           pb-16 lg:pb-0'
         >
-          <Title title='PERSONAL SKILLS'></Title>
+          <Title title={t('personalSkills')}></Title>
           <section className='mt-10 flex flex-wrap gap-3'>
             <PersonalSkills
-              label='Problem solving skills'
+              label={t('problemSolvingSkills')}
               icon={
                 <span className='icon-[pajamas--issue-closed] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
             ></PersonalSkills>
             <PersonalSkills
-              label='Attention to detail'
+              label={t('attentionToDetail')}
               icon={
                 <span className='icon-[material-symbols--filter-center-focus-rounded] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
             ></PersonalSkills>
             <PersonalSkills
-              label='Creativity'
+              label={t('creativity')}
               icon={
                 <span className='icon-[streamline--industry-innovation-and-infrastructure] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
             ></PersonalSkills>
             <PersonalSkills
-              label='Communication skills'
+              label={t('communicationSkills')}
               icon={
                 <span className='icon-[material-symbols--communication-rounded] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
             ></PersonalSkills>
             <PersonalSkills
-              label='Time management'
+              label={t('timeManagement')}
               icon={
                 <span className='icon-[material-symbols--time-auto-outline-rounded] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
             ></PersonalSkills>
-            <PersonalSkills label='Adaptability'></PersonalSkills>
+            <PersonalSkills label={t('adaptability')}></PersonalSkills>
             <PersonalSkills
-              label='Teamwork'
+              label={t('Teamwork')}
               icon={
                 <span className='icon-[fluent-mdl2--teamwork] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
             ></PersonalSkills>
             <PersonalSkills
-              label='Professional ethics'
+              label={t('professionalEthics')}
               icon={
                 <span className='icon-[iconoir--pc-check] text-boston-blue-900 dark:text-boston-blue-100'></span>
               }
