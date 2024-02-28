@@ -11,7 +11,7 @@ const Loading = () => {
         <section
           className='sm:mx-4 md:mx-2 lg:mx-10
 					sm:ml-6 flex sm:gap-2 md:gap-2
-					lg:gap-6 flex-wrap dark:justify-start justify-center w-screen'
+					lg:gap-6 flex-wrap justify-center w-screen'
         >
           <div
             className='flex-wrap
