@@ -118,13 +118,24 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
       <Link
         href='#about'
         className='hidden md:inline-flex absolute bottom-24 
-        bg-boston-blue-950-alpha-8 dark:bg-boston-blue-950-alpha-4
-        drop-shadow-md rounded-full border-1 border-white-alpha'
+        drop-shadow-md rounded-full animate-bouncing bg-boston-blue-950-alpha-8 dark:bg-boston-blue-950-alpha-4 p-1'
       >
-        <span
-          className='icon-[formkit--down] w-20 h-20
-        text-white animate-bouncing duration-150'
-        ></span>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='50'
+          height='50'
+          viewBox='0 0 24 24'
+        >
+          <path
+            className='animated-svg'
+            fill='none'
+            stroke='#09acd1'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M6 21h12M12 3v14m0 0l5-5m-5 5l-5-5'
+          />
+        </svg>
       </Link>
     </div>
   );
