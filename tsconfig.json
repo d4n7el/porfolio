@@ -15,7 +15,8 @@
       "@components-porfolio/*": ["./src/porfolio/components/*"],
       "@components-views/*": ["./src/porfolio/views/*"],
       "@interface/*": ["./src/interface/*"],
-      "@locales/*": ["./src/assets/locales/*"]
+      "@locales/*": ["./src/assets/locales/*"],
+      "@const/*": ["./src/const/*"]
     },
 
     /* Bundler mode */

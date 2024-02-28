@@ -1,172 +1,68 @@
-import { ChipSkill } from '@components/chip-skill';
 import { Title } from '@components/title';
 import { TimeLine } from '@components/time-line';
-import { PersonalSkills } from '@components/personal-skills';
-import { NavProps } from 'src/interface/nav.interface';
+import { NavProps } from '@interface/nav.interface';
 import { useTranslation } from 'react-i18next';
+import { SkillsCard } from '@components/skills-card';
+import { personalSkills, skills } from '@const/skills';
+import { experience } from 'src/const/experience';
 
 const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   const [t] = useTranslation('translation');
-
   return (
     <div
-      className='sm:h-auto lg:h-[100vh] 
-      dark:bg-black bg-white
-      dark:border-white-alpha-light border-boston-blue-500
-      border-t-1 p-10 md:p-0 xl:px-10 2xl:px-40'
+      id='resume'
+      className='sm:h-auto 
+      dark:bg-black
+      dark:border-white-alpha-light flex justify-center gap-3 '
     >
       <div
-        id='resume'
-        className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-20 px-1 sm:px-5 md:px-6'
+        className='w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1  pt-10 md:px-12   lg:px-20  2xl:px-48 '
         onMouseEnter={() => {
           changeActiveLink('#resume');
         }}
       >
-        <div
-          className='w-12/12  md:w-10/12
-           lg:w-10/12 xl:w-10/12'
-        >
-          <Title title={t('softwareSkills')}></Title>
-          <section className='flex flex-wrap gap-3 mt-10 '>
-            <ChipSkill
-              icon={<span className='icon-[logos--react]'></span>}
-              iconLabel='React'
-              defaultValue={80}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[devicon--angular]'></span>}
-              iconLabel='Angular'
-              defaultValue={89}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[mdi--github]'></span>}
-              iconLabel='Git'
-              defaultValue={90}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[devicon--html5]'></span>}
-              iconLabel='HTML'
-              defaultValue={98}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[skill-icons--css]'></span>}
-              iconLabel='CSS'
-              defaultValue={98}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[logos--typescript-icon]'></span>}
-              iconLabel='TypeScript'
-              defaultValue={60}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[devicon--tailwindcss]'></span>}
-              iconLabel='Tailwind'
-              defaultValue={85}
-            ></ChipSkill>
-            <ChipSkill
-              icon={
-                <span className='icon-[vscode-icons--file-type-mysql]'></span>
-              }
-              iconLabel='Sql'
-              defaultValue={80}
-            ></ChipSkill>
-            <ChipSkill
-              icon={
-                <span className='icon-[vscode-icons--file-type-ruby]'></span>
-              }
-              iconLabel='Ruby'
-              defaultValue={20}
-              inProgress={true}
-            ></ChipSkill>
-            <ChipSkill
-              icon={<span className='icon-[akar-icons--php-fill]'></span>}
-              iconLabel='PHP'
-              defaultValue={70}
-            ></ChipSkill>
-          </section>
-        </div>
-        <div
-          className='w-12/12 md:w-10/12
-           lg:w-10/12 xl:w-10/12 mt-10 md:mt-0'
-        >
+        <div className='w-12/12 md:mt-0  p-10 '>
           <Title title={t('experience')}></Title>
-          <section className='mt-10 w-12/12 flex flex-wrap gap-2 '>
-            <TimeLine
-              title='Capmotion Technologies'
-              subtitle='Front-end developer'
-              initialDate='2022'
-            ></TimeLine>
-            <TimeLine
-              title='Play us media'
-              subtitle='Front-end developer'
-              initialDate='2021'
-              finalDate='2022'
-            ></TimeLine>
-            <TimeLine
-              title='Magnetron S.A.S'
-              subtitle='Analyst and Software developer'
-              initialDate='2018'
-              finalDate='2021'
-            ></TimeLine>
-            <TimeLine
-              title='Exus'
-              subtitle='Front-end developer'
-              initialDate='2017'
-              finalDate='2018'
-            ></TimeLine>
+          <section className='mt-12 w-12/12 lg:flex lg:justify-center gap-2 lg:flex-row-reverse '>
+            {experience.map((item) => (
+              <TimeLine
+                title={item.title}
+                subtitle={item.subtitle}
+                initialDate={item.initialDate}
+                finalDate={item.finalDate}
+              ></TimeLine>
+            ))}
           </section>
         </div>
-        <div
-          className='w-11/12 md:w-full
-          lg:w-10/12 xl:w-10/12 mt-10 lg:mt-0 mb-10 sm:mb-0
-          pb-16 lg:pb-0'
-        >
-          <Title title={t('personalSkills')}></Title>
-          <section className='mt-10 flex flex-wrap gap-3'>
-            <PersonalSkills
-              label={t('problemSolvingSkills')}
-              icon={
-                <span className='icon-[pajamas--issue-closed] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
-            <PersonalSkills
-              label={t('attentionToDetail')}
-              icon={
-                <span className='icon-[material-symbols--filter-center-focus-rounded] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
-            <PersonalSkills
-              label={t('creativity')}
-              icon={
-                <span className='icon-[streamline--industry-innovation-and-infrastructure] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
-            <PersonalSkills
-              label={t('communicationSkills')}
-              icon={
-                <span className='icon-[material-symbols--communication-rounded] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
-            <PersonalSkills
-              label={t('timeManagement')}
-              icon={
-                <span className='icon-[material-symbols--time-auto-outline-rounded] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
-            <PersonalSkills label={t('adaptability')}></PersonalSkills>
-            <PersonalSkills
-              label={t('Teamwork')}
-              icon={
-                <span className='icon-[fluent-mdl2--teamwork] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
-            <PersonalSkills
-              label={t('professionalEthics')}
-              icon={
-                <span className='icon-[iconoir--pc-check] text-boston-blue-900 dark:text-boston-blue-100'></span>
-              }
-            ></PersonalSkills>
+        <div className='w-12/12  p-10'>
+          <Title title={t('softwareSkills')}></Title>
+          <section className='flex flex-wrap gap-2 mt-10 '>
+            {skills.map((skill) => (
+              <SkillsCard
+                key={skill.label}
+                icon={skill.icon}
+                label={skill.label}
+                description={skill.description}
+                labelBody={'experienceInYears'}
+                dataBody={skill.dataBody}
+              ></SkillsCard>
+            ))}
           </section>
+          <div
+            className='w-12/12 mt-10 sm:mb-0
+            pb-16 lg:pb-0'
+          >
+            <Title title={t('personalSkills')}></Title>
+            <section className='mt-10 flex flex-wrap gap-3'>
+              {personalSkills.map((skill) => (
+                <SkillsCard
+                  key={skill.description}
+                  icon={skill.icon}
+                  description={skill.description}
+                ></SkillsCard>
+              ))}
+            </section>
+          </div>
         </div>
       </div>
     </div>

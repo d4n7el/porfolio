@@ -7,10 +7,11 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   const [t] = useTranslation('translation');
   return (
     <div
-      className='flex dark:justify-start
-        justify-end items-center h-full
-        bg-cover bg-center relative
-        bg-light-home-bg-default dark:bg-dark-home-bg-default pt-12 sm:pt-0 pb-10 sm:pb-0'
+      className='flex relative
+        justify-center items-center h-full
+        bg-cover bg-center
+        bg-light-home-bg-default dark:bg-dark-home-bg-default 
+        pt-12 md:pt-0 pb-10 sm:pb-0'
       onMouseEnter={() => {
         changeActiveLink('#home');
       }}
@@ -28,13 +29,13 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             border-boston-blue-800
             md:rounded-xl
             md:border-solid md:border md:pl-10 md:pr-10
-            md:py-16 pl-10 sm:pr-10 py-5'
+            md:py-16 pl-10 sm:pr-10 py-5 pr-10'
         >
           <h1
             className='font-thin  bg-none 
               dark:text-boston-blue-50
               text-boston-blue-800 font-default
-              text-8xl text-justify'
+              text-8xl text-left'
           >
             <span className='font-bold dark:text-boston-blue-400 text-boston-blue-600'>
               {t('hi')}
@@ -42,14 +43,14 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             <span>, {t('iam')}</span>
           </h1>
           <h2
-            className='font-thin text-7xl text-justify
+            className='font-thin text-6xl text-left
               dark:text-boston-blue-50
               text-boston-blue-800 font-default'
           >
             {t('softwareDeveloper')}
           </h2>
           <pre
-            className='text-justify mt-3 text-2xl 
+            className='text-left mt-3 text-2xl 
               dark:text-boston-blue-200  
               text-boston-blue-800 font-default flex items-center'
           >
@@ -84,7 +85,10 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             </Button>
           </section>
         </div>
-        <div className='flex w-full sm:w-full md:w-20 lg:w-60 gap-2 flex-wrap justify-center mt-10 sm:mt-0'>
+        <div
+          className='flex w-full sm:w-full md:w-20 lg:w-60 gap-2 flex-wrap justify-center
+         mt-10 sm:mt-0 pb-10 md:pb-0'
+        >
           <CardContact
             icon={<span className='icon-[bi--linkedin] h-12 w-12'></span>}
             url='https://www.linkedin.com/in/daniel-felipe-zamora-ortiz/'
@@ -111,6 +115,17 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
           ></CardContact>
         </div>
       </section>
+      <Link
+        href='#about'
+        className='hidden md:inline-flex absolute bottom-24 
+        bg-boston-blue-950-alpha-8 dark:bg-boston-blue-950-alpha-4
+        drop-shadow-md rounded-full border-1 border-white-alpha'
+      >
+        <span
+          className='icon-[formkit--down] w-20 h-20
+        text-white animate-bouncing duration-150'
+        ></span>
+      </Link>
     </div>
   );
 };

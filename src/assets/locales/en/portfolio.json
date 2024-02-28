@@ -14,5 +14,6 @@
   "timeManagement": "Time management",
   "adaptability": "Adaptability",
   "Teamwork": "Teamwork",
-  "professionalEthics": "Professional ethics"
+  "professionalEthics": "Professional ethics",
+  "experienceInYears": "Experiences: {{ years }} years"
 }
