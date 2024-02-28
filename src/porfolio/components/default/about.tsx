@@ -16,7 +16,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         changeActiveLink('#about');
       }}
     >
-      <div className='flex justify-center flex-wrap sm:h-[90vh] py-10 sm:py-0 md:w-5/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6'>
+      <div className='flex justify-start flex-wrap sm:h-[90vh] sm:py-0 md:w-5/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6'>
         <div className='md:w-full lg:w-1/1 flex flex-wrap px-10 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div className='w-full flex justify-start'>
             <section className='divide-y-2 divide-boston-blue-700'>
@@ -44,12 +44,12 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             </article>
           </div>
         </div>
-        <div className='md:w-full lg:w-1/1 flex md:justify-start  flex-wrap pt-10'>
+        <div className='md:w-full lg:w-1/1 flex flex-wrap px-10 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div>
             <section className='divide-y-2 divide-boston-blue-700'>
               <Title title={t('hobbies&interests')}></Title>
             </section>
-            <section className=' flex justify-start w-full gap-2 mt-10'>
+            <section className='flex justify-center flex-wrap w-full gap-2 mt-10'>
               <Hobbies
                 icon={
                   <span className='icon-[iconoir--gym] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>

@@ -11,7 +11,7 @@ export const SkillsCard = ({
 }: SkillsCardProps) => {
   const [t] = useTranslation('translation');
   return (
-    <Card className=' min-w-[300px] max-w-[300px]  shadow-none border-1 border-sky-500 border-boston-blue-900'>
+    <Card className=' md:min-w-[300px] md:max-w-[300px] shadow-none border-1 border-sky-500 border-boston-blue-900'>
       <CardHeader className='flex gap-3'>
         {icon}
         <div className='flex flex-col'>
