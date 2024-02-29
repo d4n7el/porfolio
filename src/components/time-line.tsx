@@ -22,7 +22,7 @@ export const TimeLine: React.FC<TimeLineProps> = ({
       className='w-full
         flex justify-between items-center
         dark:border-white-alpha-light 
-        border-boston-blue-500 lg:border-1 lg:border-r-0 lg:border-b-0 lg:border-t-0 
+        border-boston-blue-500 border-1 border-r-0 border-b-0 border-t-0 
         pl-6 pr-2 relative min-h-28'
     >
       <div className='absolute left-[-20px]'>

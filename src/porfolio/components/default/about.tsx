@@ -10,13 +10,13 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
     <div
       id='about'
-      className='sm:h-[auto] dark:bg-black bg-white  pt-5 sm:pt-10  sm:px-0 w-full
-      flex justify-center '
+      className='sm:h-fit dark:bg-black bg-white pt-10 sm:pt-10  sm:px-0 w-full
+      flex justify-center py-20 '
       onMouseEnter={() => {
         changeActiveLink('#about');
       }}
     >
-      <div className='flex justify-start flex-wrap sm:h-[90vh] sm:py-0 md:w-5/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6'>
+      <div className='flex justify-start flex-wrap sm:py-0 md:w-5/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6'>
         <div className='md:w-full lg:w-1/1 flex flex-wrap px-10 sm:px-28 md:px-5 lg:px-15 pt-10'>
           <div className='w-full flex justify-start'>
             <section className='divide-y-2 divide-boston-blue-700'>
@@ -24,7 +24,7 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             </section>
           </div>
           <div className='w-full flex justify-start flex-wrap'>
-            <div className='w-full flex justify-start my-9 sm:my-0 '>
+            <div className='w-full flex justify-start my-10'>
               <User
                 className='dark:border-white-alpha-light
                 border-boston-blue-500 

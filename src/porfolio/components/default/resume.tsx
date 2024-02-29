@@ -11,7 +11,7 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
     <div
       id='resume'
-      className='h-auto 
+      className=' 
       dark:bg-black
       dark:border-white-alpha-light flex justify-center gap-3'
     >
@@ -26,6 +26,7 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
           <section className='mt-12 w-12/12 lg:flex lg:justify-center gap-2 lg:flex-row-reverse '>
             {experience.map((item) => (
               <TimeLine
+                key={item.title}
                 title={item.title}
                 subtitle={item.subtitle}
                 initialDate={item.initialDate}
@@ -36,7 +37,7 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         </div>
         <div className='w-12/12 p-10 pr-0'>
           <Title title={t('softwareSkills')}></Title>
-          <section className='flex flex-wrap  gap-1 sm:gap-2 mt-10 pr-5 '>
+          <section className='flex flex-wrap gap-1 sm:gap-2 mt-10 pr-5 '>
             {skills.map((skill) => (
               <SkillsCard
                 key={skill.label}
@@ -53,7 +54,7 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             pb-16 lg:pb-0'
           >
             <Title title={t('personalSkills')}></Title>
-            <section className='mt-10 flex flex-wrap gap-3'>
+            <section className='mt-10 flex flex-wrap gap-2 pr-5'>
               {personalSkills.map((skill) => (
                 <SkillsCard
                   key={skill.description}
