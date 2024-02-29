@@ -15,5 +15,12 @@
   "adaptability": "Adaptabilidad",
   "Teamwork": "Trabajo en equipo",
   "professionalEthics": "Ética profesional",
-  "experienceInYears": "Experiencia: {{ years }} años"
+  "experienceInYears": "Experiencia: {{ years }} años",
+  "frameworkJavascript": "Framework Javascript",
+  "versionControlSoftware": "Control de versiones",
+  "hyperTextMarkupLanguage": "Lenguaje de Marcado de Hipertexto",
+  "cascadingStyleSheets": "Hojas de estilo en cascada",
+  "programmingLanguage": "Lenguaje de programación",
+  "structuredQueryLanguage": "Structured Query Language",
+  "frameworkCSS": "Framework CSS"
 }
