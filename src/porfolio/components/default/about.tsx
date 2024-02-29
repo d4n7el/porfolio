@@ -10,8 +10,8 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   return (
     <div
       id='about'
-      className='sm:h-fit dark:bg-black bg-white pt-10 sm:pt-10  sm:px-0 w-full
-      flex justify-center py-20 '
+      className='min-h-screen dark:bg-gradient-to-t from-boston-blue-950 to-black  bg-white pt-10 sm:pt-10 sm:px-0 w-full
+      flex justify-center'
       onMouseEnter={() => {
         changeActiveLink('#about');
       }}
@@ -52,32 +52,32 @@ const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
             <section className='flex justify-center flex-wrap w-full gap-2 mt-10'>
               <Hobbies
                 icon={
-                  <span className='icon-[iconoir--gym] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>
+                  <span className='icon-[iconoir--gym] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
                 }
               ></Hobbies>
               <Hobbies
                 icon={
-                  <span className='icon-[emojione-monotone--soccer-ball] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>
+                  <span className='icon-[emojione-monotone--soccer-ball] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
                 }
               ></Hobbies>
               <Hobbies
                 icon={
-                  <span className='icon-[material-symbols--travel] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>
+                  <span className='icon-[material-symbols--travel] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
                 }
               ></Hobbies>
               <Hobbies
                 icon={
-                  <span className='icon-[ri--macbook-line] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>
+                  <span className='icon-[ri--macbook-line] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
                 }
               ></Hobbies>
               <Hobbies
                 icon={
-                  <span className='icon-[mdi--code-json] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>
+                  <span className='icon-[mdi--code-json] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
                 }
               ></Hobbies>
               <Hobbies
                 icon={
-                  <span className='icon-[material-symbols--family-home-rounded] text-4xl text-boston-blue-900 dark:text-boston-blue-200'></span>
+                  <span className='icon-[material-symbols--family-home-rounded] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
                 }
               ></Hobbies>
             </section>

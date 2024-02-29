@@ -12,11 +12,11 @@ const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
     <div
       id='resume'
       className=' 
-      dark:bg-black
-      dark:border-white-alpha-light flex justify-center gap-3'
+      dark:bg-gradient-to-t from-black to-boston-blue-950 
+      dark:border-white-alpha-light flex justify-center gap-3 '
     >
       <div
-        className='w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 sm:px-20 md:px-12 lg:px-20 2xl:px-48 '
+        className='w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 sm:px-20 md:px-12 lg:px-20 2xl:px-48 mt-20'
         onMouseEnter={() => {
           changeActiveLink('#resume');
         }}
