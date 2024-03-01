@@ -30,6 +30,8 @@ export default {
       'white-alpha': 'rgba(255, 255, 255, 0.8)',
       'white-alpha-light': 'rgba(255, 255, 255, 0.5)',
       'black-alpha': 'rgba(47, 47, 47, 0.4)',
+      'black-alpha-8': 'rgba(47, 47, 47, 0.8)',
+      'black-alpha-9': 'rgba(47, 47, 47, 0.9)',
       black: 'rgba(14, 21, 21, 1)',
       white: 'rgba(255, 255, 255, 1)',
       transparent: 'transparent',
@@ -47,9 +49,8 @@ export default {
       }),
       backgroundImage: {
         'light-home-bg-default':
-          "url('/src/assets/images/light-home-bg-default.webp')",
-        'dark-home-bg-default':
-          "url('/src/assets/images/dark-home-bg-default.webp')",
+          "url('/src/assets/images/light-home-bg-default.jpeg')",
+        'dark-home-bg-default': "url('/src/assets/images/dark-home.jpeg')",
         me: "url('/src/assets/images/me.webp')",
       },
       dark: {

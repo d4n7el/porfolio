@@ -61,7 +61,7 @@ export const NavbarDefault: React.FC<NavProps> = ({
 
   return (
     <Navbar
-      className='navbar-default dark:bg-black bg-white-alpha shadow-none'
+      className='navbar-default dark:bg-black-alpha-8  bg-white-alpha-light  shadow-none fixed'
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
     >

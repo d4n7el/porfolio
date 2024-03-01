@@ -8,7 +8,7 @@ export const CardContact: React.FC<CardContactProps> = ({
   return (
     <div
       className='bg-white-alpha-light
-			dark:bg-black-alpha
+			dark:bg-black-alpha-9
 			rounded-xl
 			border-boston-blue-800
 			border-solid border

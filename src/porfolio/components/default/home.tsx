@@ -8,7 +8,7 @@ const HomeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   );
 
   return (
-    <div id='home' className='w-screen sm:h-[100vh] overflow-hidden'>
+    <div id='home' className='w-screen h-screen overflow-hidden'>
       <Suspense fallback={<Loading></Loading>}>
         <ContainerHome changeActiveLink={changeActiveLink}></ContainerHome>
       </Suspense>

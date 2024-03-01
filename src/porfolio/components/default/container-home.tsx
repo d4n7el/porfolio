@@ -11,24 +11,25 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
         justify-center items-center h-full
         bg-cover bg-center
         bg-light-home-bg-default dark:bg-dark-home-bg-default 
-        pt-12 md:pt-0 pb-10 sm:pb-0'
+        md:pt-0 pb-10 sm:pb-0'
       onMouseEnter={() => {
         changeActiveLink('#home');
       }}
     >
       <section
         id='me'
-        className='sm:mx-4 md:mx-2 lg:mx-10
-          sm:ml-6 flex sm:gap-2 md:gap-2
-          lg:gap-6 flex-wrap justify-center'
+        className='
+          flex sm:gap-2 md:gap-2
+          lg:gap-6 flex-wrap justify-center items-start sm:items-center card-blur
+          absolute top-0 left-0 w-screen h-screen mt-16 sm:mt-0 '
       >
         <div
-          className='flex-wrap
-            card-blur bg-white-alpha-light
-            dark:bg-black-alpha 
-            border-boston-blue-800
-            md:rounded-xl
-            md:border-solid md:border md:pl-10 md:pr-10
+          className='flex-wrap h-fit
+            bg-white-alpha-light
+            dark:bg-black-alpha-9 
+            border-boston-blue-600
+            sm:rounded-xl
+            sm:border-solid sm:border md:pl-10 md:pr-10
             md:py-16 pl-10 sm:pr-10 py-5 pr-10'
         >
           <h1
