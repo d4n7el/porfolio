@@ -1,28 +1,30 @@
-import { TimeLineProps } from '@interface/time-line.interface';
-
-export const experience: TimeLineProps[] = [
+export const experiences = [
   {
-    title: 'Capmotion Technologies',
-    subtitle: 'Front-end developer',
-    initialDate: '2022',
-    finalDate: '2024',
+    company: 'Capmotion Technologies',
+    role: 'Front-end Developer',
+    period: '2022 - 2026',
+    description:
+      'Desarrollo de interfaces de usuario complejas utilizando React y TypeScript. Optimización de rendimiento y colaboración estrecha con equipos de diseño.',
   },
   {
-    title: 'Play us media',
-    subtitle: 'Front-end developer',
-    initialDate: '2021',
-    finalDate: '2022',
+    company: 'Play Us Media',
+    role: 'Front-end Developer',
+    period: '2021 - 2022',
+    description:
+      'Implementación de diseños responsivos y mantenimiento de aplicaciones web existentes. Integración con APIs REST y gestión de estado.',
   },
   {
-    title: 'Magnetron S.A.S',
-    subtitle: 'Analyst and Software developer',
-    initialDate: '2018',
-    finalDate: '2021',
+    company: 'Magnetron S.A.S',
+    role: 'Analyst and Software Developer',
+    period: '2018 - 2021',
+    description:
+      'Análisis de requerimientos y desarrollo de soluciones de software a medida. Participación en todo el ciclo de vida del desarrollo.',
   },
   {
-    title: 'Exus',
-    subtitle: 'Front-end developer',
-    initialDate: '2017',
-    finalDate: '2018',
+    company: 'Exus',
+    role: 'Front-end Developer',
+    period: '2017 - 2018',
+    description:
+      'Inicio de carrera profesional desarrollando sitios web estáticos y dinámicos. Maquetación HTML/CSS y scripting con JavaScript.',
   },
 ];

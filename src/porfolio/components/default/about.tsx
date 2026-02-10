@@ -1,90 +1,114 @@
-import { User } from '@nextui-org/react';
-import imageUser from '@images/me.png';
 import { NavProps } from 'src/interface/nav.interface';
-import { Hobbies } from '@components/hobbies';
-import { Title } from 'src/components/title';
 import { useTranslation } from 'react-i18next';
+import { Code, Globe, Coffee, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const AboutDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
+const AboutDefault: React.FC<NavProps> = () => {
   const [t] = useTranslation('translation');
+  const stats = [
+    {
+      label: 'Años de Experiencia',
+      value: '+7',
+      icon: <Code className='w-5 h-5' />,
+    },
+    {
+      label: 'Tecnologías',
+      value: '15+',
+      icon: <Zap className='w-5 h-5' />,
+    },
+    {
+      label: 'Proyectos Web',
+      value: '50+',
+      icon: <Globe className='w-5 h-5' />,
+    },
+    {
+      label: 'Compromiso',
+      value: '100%',
+      icon: <Coffee className='w-5 h-5' />,
+    },
+  ];
   return (
-    <div
-      id='about'
-      className='min-h-screen dark:bg-gradient-to-t from-boston-blue-950 to-black  bg-white pt-10 sm:pt-10 sm:px-0 w-full
-      flex justify-center'
-      onMouseEnter={() => {
-        changeActiveLink('#about');
-      }}
-    >
-      <div className='flex justify-start flex-wrap sm:py-0 md:w-5/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6'>
-        <div className='md:w-full lg:w-1/1 flex flex-wrap px-10 sm:px-28 md:px-5 lg:px-15 pt-10'>
-          <div className='w-full flex justify-start'>
-            <section className='divide-y-2 divide-boston-blue-700'>
-              <Title title={t('about')} subtitle='dfzortiz@gmail.com'></Title>
-            </section>
-          </div>
-          <div className='w-full flex justify-start flex-wrap'>
-            <div className='w-full flex justify-start my-10'>
-              <User
-                className='dark:border-white-alpha-light
-                border-boston-blue-500 
-                border-1 h-fit p-4
-                dark:text-boston-blue-50 text-boston-blue-900'
-                name='Daniel Zamora'
-                description={t('softwareDeveloper')}
-                avatarProps={{
-                  src: imageUser,
-                }}
-              />
-            </div>
-            <article className='mt-0'>
-              <p className='text-left dark:text-boston-blue-50  text-boston-blue-900 md:mt-4 '>
-                {t('paragraphWithMe')}
-              </p>
-            </article>
-          </div>
-        </div>
-        <div className='md:w-full lg:w-1/1 flex flex-wrap px-10 sm:px-28 md:px-5 lg:px-15 pt-10'>
+    <section id='sobre-mi' className='py-24 bg-surface/30'>
+      <div className='max-w-6xl mx-auto px-6'>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+          className='grid md:grid-cols-2 gap-16 items-center'
+        >
           <div>
-            <section className='divide-y-2 divide-boston-blue-700'>
-              <Title title={t('hobbies&interests')}></Title>
-            </section>
-            <section className='flex justify-center flex-wrap w-full gap-2 mt-10'>
-              <Hobbies
-                icon={
-                  <span className='icon-[iconoir--gym] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
-                }
-              ></Hobbies>
-              <Hobbies
-                icon={
-                  <span className='icon-[emojione-monotone--soccer-ball] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
-                }
-              ></Hobbies>
-              <Hobbies
-                icon={
-                  <span className='icon-[material-symbols--travel] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
-                }
-              ></Hobbies>
-              <Hobbies
-                icon={
-                  <span className='icon-[ri--macbook-line] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
-                }
-              ></Hobbies>
-              <Hobbies
-                icon={
-                  <span className='icon-[mdi--code-json] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
-                }
-              ></Hobbies>
-              <Hobbies
-                icon={
-                  <span className='icon-[material-symbols--family-home-rounded] text-4xl text-boston-blue-900 dark:text-boston-blue-100'></span>
-                }
-              ></Hobbies>
-            </section>
+            <h2 className='text-3xl font-bold mb-6 flex items-center gap-3'>
+              <span className='w-12 h-1 bg-accent rounded-full'></span>
+              Sobre Mí
+            </h2>
+            <div className='space-y-6 secondary text-lg leading-relaxed'>
+              <p>
+                Soy un desarrollador web apasionado con una sólida formación
+                técnica y más de 7 años de experiencia en el sector. Mi enfoque
+                se centra en crear soluciones digitales que no solo funcionen
+                perfectamente, sino que también ofrezcan una experiencia de
+                usuario excepcional.
+              </p>
+              <p>
+                He trabajado con empresas como Capmotion Technologies, Play Us
+                Media y Magnetron S.A.S, donde me he destacado por mi capacidad
+                para implementar arquitecturas robustas y mantener altos
+                estándares de calidad en el código.
+              </p>
+              <p>
+                Mi stack principal incluye React, Angular y Ruby on Rails, pero
+                mi verdadera fortaleza radica en mi adaptabilidad y capacidad
+                para aprender nuevas tecnologías rápidamente para resolver
+                problemas complejos.
+              </p>
+            </div>
           </div>
-        </div>
+
+          <div className='grid grid-cols-2 gap-4'>
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                className='p-6 rounded-2xl bg-surface border border-border hover:border-accent/30 transition-colors group'
+              >
+                <div className='mb-4 p-3 rounded-lg bg-background w-fit text-accent group-hover:scale-110 transition-transform duration-300'>
+                  {stat.icon}
+                </div>
+                <div className='text-3xl font-bold text-white mb-1'>
+                  {stat.value}
+                </div>
+                <div className='text-sm secondary'>{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

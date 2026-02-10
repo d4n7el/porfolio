@@ -1,137 +1,112 @@
-import {
-  Navbar,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-} from '@nextui-org/react';
-import { useTheme } from 'next-themes';
-import { NavProps } from '@interface/nav.interface';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Menu, X, Code2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { SelectLanguage } from 'src/components/select-languages/select-language';
 import { VisitCount } from 'src/components/visit-count';
-import { useTranslation } from 'react-i18next';
-import { SelectLanguage } from '@components/select-languages/select-language';
-
-export const NavbarDefault: React.FC<NavProps> = ({
-  linkActive,
-  setLinkActive,
-}) => {
-  const [t] = useTranslation('translation');
-
-  const menuItems = [
-    {
-      label: t('home'),
-      url: '#home',
-    },
-    {
-      label: t('about'),
-      url: '#about',
-    },
-    {
-      label: t('resume'),
-      url: '#resume',
-    },
-  ];
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  const changeActiveLink = (activeLink: string) => {
-    if (setLinkActive) setLinkActive(activeLink);
-    if (isMenuOpen) setIsMenuOpen(false);
-  };
-
-  const menuItemsElements = menuItems.map((item) => (
-    <NavbarItem key={item.url}>
-      <Link
-        onClick={() => changeActiveLink(item.url)}
-        className={`dark:text-boston-blue-100 text-boston-blue-900 text-1xl 
-        tracking-[.15em]  
-        cursor-pointer px-3 rounded-md ${
-          linkActive === item.url ? 'border-active-link' : ''
-        }`}
-        href={item.url}
-      >
-        {item.label}
-      </Link>
-    </NavbarItem>
-  ));
-
+const navLinks = [
+  {
+    name: 'Inicio',
+    href: '#hero',
+  },
+  {
+    name: 'Sobre mí',
+    href: '#sobre-mi',
+  },
+  {
+    name: 'Experiencia',
+    href: '#experiencia',
+  },
+  {
+    name: 'Habilidades',
+    href: '#habilidades',
+  },
+  {
+    name: 'Contacto',
+    href: '#contacto',
+  },
+];
+export const NavbarDefault = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <Navbar
-      className='navbar-default dark:bg-black-alpha-8  bg-white-alpha-light  shadow-none fixed'
-      onMenuOpenChange={setIsMenuOpen}
-      isMenuOpen={isMenuOpen}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'}`}
     >
-      <NavbarContent className='sm:hidden'>
-        <NavbarMenuToggle
-          icon={
-            isMenuOpen ? (
-              <span
-                className='icon-[iconamoon--close] text-2xl dark:text-boston-blue-100
-              text-boston-blue-700 animate-expand-horizontally'
-              ></span>
-            ) : (
-              <span
-                className='icon-[tabler--menu] 
-                text-2xl 
-                dark:text-boston-blue-100
-                text-boston-blue-700 animate-expand-vertically'
-              ></span>
-            )
-          }
-        />
-      </NavbarContent>
-      <NavbarContent
-        className={`hidden sm:flex gap-4 font-default font-semibold`}
-        justify='center'
-      >
-        {menuItemsElements}
-      </NavbarContent>
-      <NavbarContent justify='end'>
-        <NavbarItem className='h-6 w-6 flex cursor-pointer'>
-          {theme === 'dark' ? (
-            <button aria-label='theme-dark' onClick={() => setTheme('light')}>
-              <span
-                className='icon-[icon-park-solid--dark-mode]
-                h-6 w-6 dark:text-boston-blue-100
-                text-boston-blue-900
-                animate-spin-clockwise'
-              ></span>
-            </button>
-          ) : (
-            <button aria-label='theme-light' onClick={() => setTheme('dark')}>
-              <span
-                className='icon-[tdesign--mode-dark]
-                h-6 w-6 dark:text-boston-blue-100 text-boston-blue-900
-                animate-spin-counter-clockwise'
-              ></span>
-            </button>
-          )}
-        </NavbarItem>
-        <SelectLanguage></SelectLanguage>
-        <VisitCount></VisitCount>
-      </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item) => (
-          <NavbarMenuItem key={`${item.url}`}>
-            <Link
-              onClick={() => changeActiveLink(item.url)}
-              className={`w-full dark:text-boston-blue-100 text-boston-blue-900 ${
-                linkActive === item.url
-                  ? 'dark:text-boston-blue-100 text-boston-blue-900'
-                  : 'dark:text-boston-blue-500 text-boston-blue-500'
-              }`}
-              href={item.url}
-              size='lg'
+      <div className='max-w-6xl mx-auto px-6 h-20 flex items-center justify-between'>
+        <a href='#hero' className='flex items-center gap-2 group'>
+          <div className='p-2 rounded-lg bg-surface border border-border group-hover:border-accent/50 transition-colors'>
+            <Code2 className='w-6 h-6 text-accent' />
+          </div>
+          <span className='font-bold text-lg tracking-tight'>
+            Daniel Zamora
+          </span>
+        </a>
+
+        {/* Desktop Nav */}
+        <div className='hidden md:flex items-center gap-8'>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className='text-sm font-medium secondary hover:text-accent transition-colors relative group'
             >
-              {item.label}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+              {link.name}
+              <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full' />
+            </a>
+          ))}
+          <VisitCount></VisitCount>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className='md:hidden p-2 secondary hover:text-primary'
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label='Toggle menu'
+        >
+          {isOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+        </button>
+      </div>
+
+      {/* Mobile Nav */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              height: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: 'auto',
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+            }}
+            className='md:hidden bg-surface border-b border-border overflow-hidden'
+          >
+            <div className='px-6 py-8 flex flex-col gap-6'>
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className='text-lg font-medium secondary hover:text-accent transition-colors'
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };

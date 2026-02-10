@@ -6,8 +6,8 @@ export const Hobbies: React.FC<HobbiesProps> = ({ icon }) => {
       className='bg-white-alpha
       flex justify-center 
       dark:bg-black-alpha 
-      rounded-xl border-boston-blue-800 
-      border-solid border p-2 sm:p-2 md:p-6'
+      border-boston-blue-500
+      border-solid border pl-10 pr-10 border-t-0 border-b-0'
     >
       {icon}
     </article>

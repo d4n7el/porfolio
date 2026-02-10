@@ -9,11 +9,9 @@ export const CardContact: React.FC<CardContactProps> = ({
     <div
       className='bg-white-alpha-light
 			dark:bg-black-alpha-9
-			rounded-xl
-			border-boston-blue-800
-			border-solid border
-			w-20 sm:w-40
-			card-blur h-24 flex items-center justify-center'
+			rounded-full
+			sm:w-10
+			card-blur h-12 flex items-center justify-center'
     >
       <a
         aria-label={arialLabel}

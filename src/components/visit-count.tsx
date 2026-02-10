@@ -26,22 +26,20 @@ export const VisitCount = () => {
     });
   }, []);
   return (
-    <NavbarItem className='flex'>
-      <div className='flex '>
-        <Chip
-          className=' dark:text-boston-blue-100
+    <div className='flex '>
+      <Chip
+        className=' dark:text-boston-blue-100
           text-boston-blue-900 px-2 border-1'
-          startContent={
-            <span
-              className='icon-[ph--users-three]
+        startContent={
+          <span
+            className='icon-[ph--users-three]
               h-6 w-6 dark:text-boston-blue-100
             text-boston-blue-900 animate-slide-in-left '
-            ></span>
-          }
-        >
-          <CountNumberAnimated number={count}></CountNumberAnimated>
-        </Chip>
-      </div>
-    </NavbarItem>
+          ></span>
+        }
+      >
+        <CountNumberAnimated number={count}></CountNumberAnimated>
+      </Chip>
+    </div>
   );
 };

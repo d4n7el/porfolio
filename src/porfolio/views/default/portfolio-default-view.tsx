@@ -3,6 +3,7 @@ import ResumeDefault from '@components-porfolio/default/resume';
 import AboutDefault from '@components-porfolio/default/about';
 import HomeDefault from '@components-porfolio/default/home';
 import { useEffect, useState } from 'react';
+import { Contact } from 'src/porfolio/components/default/contact';
 
 export const PortfolioDefaultView = () => {
   const hash = window.location.hash;
@@ -11,19 +12,15 @@ export const PortfolioDefaultView = () => {
     setLinkActive(linkActive);
   };
 
-  useEffect(() => {
-    console.log(linkActive);
-  }, [linkActive]);
+  useEffect(() => {}, [linkActive]);
 
   return (
     <div>
-      <NavbarDefault
-        linkActive={linkActive}
-        setLinkActive={setLinkActive}
-      ></NavbarDefault>
+      <NavbarDefault></NavbarDefault>
       <HomeDefault changeActiveLink={changeActiveLink} />
       <AboutDefault changeActiveLink={changeActiveLink} />
       <ResumeDefault changeActiveLink={changeActiveLink} />
+      <Contact />
     </div>
   );
 };
