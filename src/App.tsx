@@ -15,7 +15,7 @@ export const App = () => {
       <NextUIProvider>
         <FirebaseAppProvider firebaseConfig={firebaseConfig}>
           <Suspense fallback={<Loading></Loading>}>
-            <NextThemesProvider attribute='class' defaultTheme='light'>
+            <NextThemesProvider attribute='class' defaultTheme='dark'>
               <SelectPortfolioView></SelectPortfolioView>
             </NextThemesProvider>
           </Suspense>
