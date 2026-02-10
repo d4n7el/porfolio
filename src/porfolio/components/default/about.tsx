@@ -1,10 +1,8 @@
 import { NavProps } from 'src/interface/nav.interface';
-import { useTranslation } from 'react-i18next';
 import { Code, Globe, Coffee, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const AboutDefault: React.FC<NavProps> = () => {
-  const [t] = useTranslation('translation');
   const stats = [
     {
       label: 'Años de Experiencia',

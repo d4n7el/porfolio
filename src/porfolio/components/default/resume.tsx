@@ -1,12 +1,8 @@
-import { Title } from '@components/title';
 import { NavProps } from '@interface/nav.interface';
-import { useTranslation } from 'react-i18next';
 import { SkillsCard } from '@components/skills-card';
-import { personalSkills, skills } from '@const/skills';
 import { Experience } from './experience';
 
 const ResumeDefault: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
-  const [t] = useTranslation('translation');
   return (
     <div id='resume' className='bg-black'>
       <div

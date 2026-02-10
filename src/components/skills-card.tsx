@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Layout, Terminal, Server } from 'lucide-react';
 
@@ -89,7 +88,6 @@ const skillCategories = [
 ];
 
 export const SkillsCard = () => {
-  const [t] = useTranslation('translation');
   return (
     <section id='habilidades' className='py-32 bg-surface/30'>
       <div className='max-w-6xl mx-auto px-6'>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SelectLanguage } from 'src/components/select-languages/select-language';
 import { VisitCount } from 'src/components/visit-count';
 const navLinks = [
   {

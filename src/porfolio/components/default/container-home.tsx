@@ -1,10 +1,8 @@
 import { NavProps } from '@interface/nav.interface';
-import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Mail, ArrowRight, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
-  const [t] = useTranslation('translation');
   return (
     <div
       className=' w-screen overflow-hidden relative'

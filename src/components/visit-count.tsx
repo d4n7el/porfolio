@@ -1,4 +1,4 @@
-import { Chip, NavbarItem } from '@nextui-org/react';
+import { Chip } from '@nextui-org/react';
 import {
   getFirestore,
   getDoc,
