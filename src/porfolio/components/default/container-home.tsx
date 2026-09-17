@@ -2,7 +2,7 @@ import { NavProps } from '@interface/nav.interface';
 import { Mail, ArrowRight, FileDown, MapPin, Phone } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@components/ui/brand-icons';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
   const [t] = useTranslation('translation');
@@ -65,10 +65,17 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className='text-base sm:text-lg text-slate-300 leading-relaxed font-normal mb-8 max-w-xl'
-              dangerouslySetInnerHTML={{
-                __html: t('elevatorPitch', { years: t('elevatorPitchYears') }),
-              }}
-            />
+            >
+              <Trans
+                i18nKey='elevatorPitch'
+                values={{ years: t('elevatorPitchYears') }}
+                components={{
+                  1: <strong className='text-white' />,
+                  2: <span className='text-cyan-300 font-medium' />,
+                  3: <span className='text-cyan-300 font-medium' />,
+                }}
+              />
+            </motion.p>
 
             {/* Contact Quick Info bar */}
             <motion.div
