@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite --mode dev",
     "prod": "vite --mode production",
-    "build": "tsc && vite build ",
-    "build-prod": "tsc && vite build --mode production",
+    "build": "tsc && eslint . --ext ts,tsx --max-warnings 0 && vite build",
+    "build-prod": "tsc && eslint . --ext ts,tsx --max-warnings 0 && vite build --mode production",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build-prod",

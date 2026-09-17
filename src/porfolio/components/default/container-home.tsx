@@ -165,7 +165,7 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                 {/* Terminal Code Body */}
                 <div className='p-5 font-mono text-xs leading-relaxed space-y-3 bg-[#0d121f]/90'>
                   <div className='text-slate-500'>
-                    // Stack Arquitectónico &amp; Especialidad
+                    {'// Stack Arquitectónico & Especialidad'}
                   </div>
                   <div>
                     <span className='text-cyan-400'>const</span>{' '}
@@ -174,11 +174,11 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                   <div className='pl-4 space-y-1'>
                     <p>
                       <span className='text-slate-400'>name:</span>{' '}
-                      <span className='text-amber-200'>"Daniel Felipe Zamora Ortiz"</span>,
+                      <span className='text-amber-200'>&quot;Daniel Felipe Zamora Ortiz&quot;</span>,
                     </p>
                     <p>
                       <span className='text-slate-400'>role:</span>{' '}
-                      <span className='text-amber-200'>"Full Stack / Frontend Architect"</span>,
+                      <span className='text-amber-200'>&quot;Full Stack / Frontend Architect&quot;</span>,
                     </p>
                     <p>
                       <span className='text-slate-400'>experienceYears:</span>{' '}
@@ -186,25 +186,25 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                     </p>
                     <p>
                       <span className='text-slate-400'>coreBackend:</span> [
-                      <span className='text-amber-200'>"Java"</span>,{' '}
-                      <span className='text-amber-200'>"Spring Boot"</span>,{' '}
-                      <span className='text-amber-200'>"REST APIs"</span>],
+                      <span className='text-amber-200'>&quot;Java&quot;</span>,{' '}
+                      <span className='text-amber-200'>&quot;Spring Boot&quot;</span>,{' '}
+                      <span className='text-amber-200'>&quot;REST APIs&quot;</span>],
                     </p>
                     <p>
                       <span className='text-slate-400'>coreFrontend:</span> [
-                      <span className='text-amber-200'>"React"</span>,{' '}
-                      <span className='text-amber-200'>"Angular"</span>,{' '}
-                      <span className='text-amber-200'>"Micro-frontends"</span>],
+                      <span className='text-amber-200'>&quot;React&quot;</span>,{' '}
+                      <span className='text-amber-200'>&quot;Angular&quot;</span>,{' '}
+                      <span className='text-amber-200'>&quot;Micro-frontends&quot;</span>],
                     </p>
                     <p>
                       <span className='text-slate-400'>databaseEngines:</span> [
-                      <span className='text-amber-200'>"SQL Server"</span>,{' '}
-                      <span className='text-amber-200'>"PostgreSQL"</span>,{' '}
-                      <span className='text-amber-200'>"MySQL"</span>],
+                      <span className='text-amber-200'>&quot;SQL Server&quot;</span>,{' '}
+                      <span className='text-amber-200'>&quot;PostgreSQL&quot;</span>,{' '}
+                      <span className='text-amber-200'>&quot;MySQL&quot;</span>],
                     </p>
                     <p>
                       <span className='text-slate-400'>verifiedImpact:</span>{' '}
-                      <span className='text-cyan-400 font-bold'>"35% load time optimization"</span>
+                      <span className='text-cyan-400 font-bold'>&quot;35% load time optimization&quot;</span>
                     </p>
                   </div>
                   <div>{'};'}</div>

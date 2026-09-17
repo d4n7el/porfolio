@@ -12,8 +12,11 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   settings: {
+    react: {
+      version: 'detect',
+    },
     'import/resolver': {
-      typescript: {}, // Utiliza el resolver de TypeScript
+      typescript: {},
     },
   },
   parser: '@typescript-eslint/parser',
@@ -26,6 +29,8 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react'],
   rules: {
-    // Aquí puedes agregar reglas adicionales de ESLint si lo deseas
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
 };

@@ -4,6 +4,7 @@ import {
   updateDoc,
   doc,
   onSnapshot,
+  DocumentSnapshot,
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { CountNumberAnimated } from './count-number-animated';
@@ -11,17 +12,18 @@ import { Users } from 'lucide-react';
 
 export const VisitCount = () => {
   const [count, setCount] = useState<number>(0);
-  const BD = getFirestore();
-  const documentID = import.meta.env.VITE_APP_ENV;
 
   useEffect(() => {
-    onSnapshot(doc(BD, 'visit_count', documentID), (response: any) => {
-      setCount(response.data().count);
+    const db = getFirestore();
+    const documentID = import.meta.env.VITE_APP_ENV;
+
+    onSnapshot(doc(db, 'visit_count', documentID), (response: DocumentSnapshot) => {
+      setCount(response.data()?.count ?? 0);
     });
-    getDoc(doc(BD, 'visit_count', documentID)).then((response) => {
-      const count = response.data()?.count + 1;
-      updateDoc(doc(BD, 'visit_count', documentID), {
-        count: count,
+    getDoc(doc(db, 'visit_count', documentID)).then((response) => {
+      const newCount = (response.data()?.count ?? 0) + 1;
+      updateDoc(doc(db, 'visit_count', documentID), {
+        count: newCount,
       });
     });
   }, []);
