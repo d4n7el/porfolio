@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Mail, Phone, Github, Linkedin, ArrowUp, Sparkles } from 'lucide-react';
+import { Mail, Phone, ArrowUp, Sparkles } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '@components/ui/brand-icons';
 import { ContactCard } from '@components/ui/contact-card';
 
 export const Contact = () => {
@@ -60,7 +61,7 @@ export const Contact = () => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              <Linkedin className='w-4 h-4 text-cyan-400' />
+              <LinkedinIcon className='w-4 h-4 text-cyan-400' />
               <span>{t('linkedin')}</span>
             </a>
             <a
@@ -69,7 +70,7 @@ export const Contact = () => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              <Github className='w-4 h-4 text-cyan-400' />
+              <GithubIcon className='w-4 h-4 text-cyan-400' />
               <span>{t('github')}</span>
             </a>
           </div>

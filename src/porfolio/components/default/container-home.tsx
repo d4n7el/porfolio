@@ -1,5 +1,6 @@
 import { NavProps } from '@interface/nav.interface';
-import { Github, Linkedin, Mail, ArrowRight, FileDown, MapPin, Phone } from 'lucide-react';
+import { Mail, ArrowRight, FileDown, MapPin, Phone } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '@components/ui/brand-icons';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -123,7 +124,7 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                 rel='noopener noreferrer'
                 target='_blank'
               >
-                <Github className='w-4 h-4' />
+                <GithubIcon className='w-4 h-4' />
               </a>
               <a
                 aria-label='LinkedIn'
@@ -132,7 +133,7 @@ const ContainerHome: React.FC<NavProps> = ({ changeActiveLink = () => {} }) => {
                 rel='noopener noreferrer'
                 target='_blank'
               >
-                <Linkedin className='w-4 h-4' />
+                <LinkedinIcon className='w-4 h-4' />
               </a>
             </motion.div>
           </div>
