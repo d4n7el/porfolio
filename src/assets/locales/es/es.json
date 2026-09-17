@@ -1,7 +1,10 @@
 {
   "home": "Inicio",
-  "english": "Ingles",
-  "spanish": "Español",
   "about": "Sobre mí",
-  "resume": "Curriculum"
+  "experience": "Experiencia",
+  "skills": "Habilidades",
+  "contact": "Contacto",
+  "letsTalk": "Hablemos",
+  "english": "Inglés",
+  "spanish": "Español"
 }

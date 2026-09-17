@@ -1,7 +1,10 @@
 {
   "home": "Home",
-  "english": "English",
-  "spanish": "Spanish",
   "about": "About",
-  "resume": "Resume"
+  "experience": "Experience",
+  "skills": "Skills",
+  "contact": "Contact",
+  "letsTalk": "Let's Talk",
+  "english": "English",
+  "spanish": "Spanish"
 }
