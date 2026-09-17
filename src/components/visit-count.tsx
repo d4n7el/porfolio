@@ -1,4 +1,3 @@
-import { Chip } from '@nextui-org/react';
 import {
   getFirestore,
   getDoc,
@@ -8,6 +7,7 @@ import {
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { CountNumberAnimated } from './count-number-animated';
+import { Users } from 'lucide-react';
 
 export const VisitCount = () => {
   const [count, setCount] = useState<number>(0);
@@ -25,21 +25,11 @@ export const VisitCount = () => {
       });
     });
   }, []);
+
   return (
-    <div className='flex '>
-      <Chip
-        className=' dark:text-boston-blue-100
-          text-boston-blue-900 px-2 border-1'
-        startContent={
-          <span
-            className='icon-[ph--users-three]
-              h-6 w-6 dark:text-boston-blue-100
-            text-boston-blue-900 animate-slide-in-left '
-          ></span>
-        }
-      >
-        <CountNumberAnimated number={count}></CountNumberAnimated>
-      </Chip>
+    <div className='inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyber-850 border border-slate-800 text-[11px] font-mono text-slate-400'>
+      <Users className='w-3 h-3 text-cyan-400' />
+      <CountNumberAnimated number={count} />
     </div>
   );
 };
