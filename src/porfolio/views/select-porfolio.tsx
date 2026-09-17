@@ -2,8 +2,8 @@ import { PortfolioDefaultView } from '@components-views/default/portfolio-defaul
 
 export const SelectPortfolioView = () => {
   return (
-    <div className='bg-light-primary dark:bg-light'>
-      <PortfolioDefaultView></PortfolioDefaultView>
+    <div className='bg-[#0b0f17] min-h-screen'>
+      <PortfolioDefaultView />
     </div>
   );
 };

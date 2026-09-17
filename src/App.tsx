@@ -14,9 +14,13 @@ export const App = () => {
     <I18nextProvider i18n={i18nInstance}>
       <NextUIProvider>
         <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-          <Suspense fallback={<Loading></Loading>}>
+          <Suspense fallback={<Loading />}>
             <NextThemesProvider attribute='class' defaultTheme='dark'>
-              <SelectPortfolioView></SelectPortfolioView>
+              {/* Ambient Light Orbs */}
+              <div className='ambient-orb ambient-orb-1' />
+              <div className='ambient-orb ambient-orb-2' />
+              <div className='ambient-orb ambient-orb-3' />
+              <SelectPortfolioView />
             </NextThemesProvider>
           </Suspense>
         </FirebaseAppProvider>

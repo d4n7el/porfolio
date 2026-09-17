@@ -1,111 +1,125 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { VisitCount } from 'src/components/visit-count';
-const navLinks = [
-  {
-    name: 'Inicio',
-    href: '#hero',
-  },
-  {
-    name: 'Sobre mí',
-    href: '#sobre-mi',
-  },
-  {
-    name: 'Experiencia',
-    href: '#experiencia',
-  },
-  {
-    name: 'Habilidades',
-    href: '#habilidades',
-  },
-  {
-    name: 'Contacto',
-    href: '#contacto',
-  },
-];
+import { SelectLanguage } from 'src/components/select-languages/select-language';
+
 export const NavbarDefault = () => {
+  const [t] = useTranslation('translation');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navLinks = [
+    { name: t('about'), href: '#sobre-mi' },
+    { name: t('experience'), href: '#experiencia' },
+    { name: t('skills'), href: '#habilidades' },
+    { name: t('contact'), href: '#contacto' },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : 'bg-transparent'}`}
-    >
-      <div className='max-w-6xl mx-auto px-6 h-20 flex items-center justify-between'>
-        <a href='#hero' className='flex items-center gap-2 group'>
-          <div className='p-2 rounded-lg bg-surface border border-border group-hover:border-accent/50 transition-colors'>
-            <Code2 className='w-6 h-6 text-accent' />
-          </div>
-          <span className='font-bold text-lg tracking-tight'>
-            Daniel Zamora
-          </span>
-        </a>
+    <header className='fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-4 sm:px-6'>
+      <nav
+        className={`w-full max-w-6xl flex items-center justify-between px-6 py-3.5 rounded-full border shadow-2xl transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#0f131c]/80 backdrop-blur-md border-slate-800/80 hover:border-slate-700/80'
+            : 'bg-[#0f131c]/60 backdrop-blur-md border-slate-800/50'
+        }`}
+      >
+        {/* Logo + VisitCount */}
+        <div className='flex items-center gap-3'>
+          <a
+            href='#hero'
+            className='flex items-center gap-2 group text-white font-bold tracking-tight text-lg'
+          >
+            <span className='text-cyan-400 font-mono tracking-tighter text-base transition-transform duration-300 group-hover:-translate-x-0.5'>
+              &lt;/&gt;
+            </span>
+            <span className='text-slate-100 group-hover:text-white transition-colors'>
+              Daniel Zamora
+            </span>
+          </a>
+          <VisitCount />
+        </div>
 
         {/* Desktop Nav */}
-        <div className='hidden md:flex items-center gap-8'>
+        <div className='hidden md:flex items-center gap-8 text-sm font-medium text-slate-300'>
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className='text-sm font-medium secondary hover:text-accent transition-colors relative group'
+              className='hover:text-cyan-400 transition-colors duration-200'
             >
               {link.name}
-              <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full' />
             </a>
           ))}
-          <VisitCount></VisitCount>
+        </div>
+
+        {/* Right: Language Selector + CTA */}
+        <div className='hidden md:flex items-center gap-3'>
+          <SelectLanguage />
+          <a
+            href='#contacto'
+            className='inline-flex items-center gap-2 px-5 py-2 text-xs font-semibold tracking-wide uppercase text-slate-200 bg-cyber-800/90 hover:bg-cyber-750 hover:text-white rounded-full border border-slate-700 hover:border-cyan-500/50 shadow-sm transition-all duration-300'
+          >
+            <span>{t('letsTalk')}</span>
+            <ArrowRight className='w-3.5 h-3.5 text-cyan-400' />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className='md:hidden p-2 secondary hover:text-primary'
+          className='md:hidden p-2 text-slate-400 hover:text-white transition-colors'
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Toggle menu'
         >
           {isOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-              height: 0,
-            }}
-            animate={{
-              opacity: 1,
-              height: 'auto',
-            }}
-            exit={{
-              opacity: 0,
-              height: 0,
-            }}
-            className='md:hidden bg-surface border-b border-border overflow-hidden'
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className='md:hidden fixed top-20 left-4 right-4 bg-[#0f131c]/95 backdrop-blur-md border border-slate-800/80 rounded-2xl overflow-hidden shadow-2xl'
           >
-            <div className='px-6 py-8 flex flex-col gap-6'>
+            <div className='px-6 py-6 flex flex-col gap-4'>
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className='text-lg font-medium secondary hover:text-accent transition-colors'
+                  className='text-lg font-medium text-slate-300 hover:text-cyan-400 transition-colors'
                 >
                   {link.name}
                 </a>
               ))}
+              <div className='flex items-center gap-3 mt-2'>
+                <SelectLanguage />
+                <a
+                  href='#contacto'
+                  onClick={() => setIsOpen(false)}
+                  className='inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wide uppercase text-slate-200 bg-cyber-800/90 hover:bg-cyber-750 hover:text-white rounded-full border border-slate-700 hover:border-cyan-500/50 shadow-sm transition-all duration-300 flex-1'
+                >
+                  <span>{t('letsTalk')}</span>
+                  <ArrowRight className='w-3.5 h-3.5 text-cyan-400' />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };
