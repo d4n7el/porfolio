@@ -1,106 +1,94 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MessageCircle, ArrowUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Mail, Phone, Github, Linkedin, ArrowUp, Sparkles } from 'lucide-react';
+import { ContactCard } from '@components/ui/contact-card';
 
 export const Contact = () => {
+  const [t] = useTranslation('translation');
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
   return (
-    <footer
+    <section
       id='contacto'
-      className='py-24 relative border-t border-border bg-background'
+      className='py-20 sm:py-28 border-t border-slate-800/60 relative'
     >
-      <div className='max-w-4xl mx-auto px-6 text-center'>
+      <div className='max-w-3xl mx-auto px-4 sm:px-6 text-center'>
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className='mb-12'
         >
-          <h2 className='text-4xl md:text-5xl font-bold mb-6'>
-            ¿Listo para trabajar juntos?
+          <div className='inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono font-medium mb-6'>
+            <Sparkles className='w-3.5 h-3.5' />
+            <span>{t('startConversation')}</span>
+          </div>
+          <h2 className='text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4'>
+            {t('ctaHeading')}
           </h2>
-          <p className='text-xl secondary max-w-2xl mx-auto mb-10'>
-            Actualmente estoy disponible para nuevos proyectos y oportunidades.
-            Si tienes una idea en mente o necesitas ayuda con tu próximo
-            desarrollo, hablemos.
+          <p className='text-sm sm:text-base text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed'>
+            {t('ctaDescription')}
           </p>
 
-          <a
-            href='mailto:dfzortiz@gmail.com'
-            className='inline-flex items-center gap-3 px-8 py-4 rounded-full bg-accent text-background font-bold text-lg hover:bg-accent/90 transition-all hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)]'
-          >
-            <Mail className='w-5 h-5' />
-            dfzortiz@gmail.com
-          </a>
+          {/* Direct Contact Cards Grid */}
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-left'>
+            <ContactCard
+              icon={<Mail className='w-5 h-5' />}
+              label={t('emailLabel')}
+              value={t('email')}
+              href={`mailto:${t('email')}`}
+            />
+            <ContactCard
+              icon={<Phone className='w-5 h-5' />}
+              label={t('phoneLabel')}
+              value={t('phone')}
+              href={`tel:${t('phone').replace(/\s/g, '')}`}
+              iconBg='bg-emerald-950'
+              iconBorder='border-emerald-800'
+              iconColor='text-emerald-400'
+            />
+          </div>
+
+          {/* Social Bar */}
+          <div className='flex items-center justify-center gap-4 mb-12'>
+            <a
+              className='flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-850 border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/40 text-xs font-mono transition-all'
+              href='https://www.linkedin.com/in/daniel-felipe-zamora-ortiz'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <Linkedin className='w-4 h-4 text-cyan-400' />
+              <span>{t('linkedin')}</span>
+            </a>
+            <a
+              className='flex items-center gap-2 px-4 py-2 rounded-lg bg-cyber-850 border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/40 text-xs font-mono transition-all'
+              href='https://github.com/d4n7el'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <Github className='w-4 h-4 text-cyan-400' />
+              <span>{t('github')}</span>
+            </a>
+          </div>
+
+          {/* Copyright & Back to top */}
+          <div className='flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-slate-800/80 text-xs text-slate-500 font-mono gap-4'>
+            <div>
+              {t('copyright', { year: new Date().getFullYear() })}
+            </div>
+            <button
+              onClick={scrollToTop}
+              aria-label='Volver arriba'
+              className='w-9 h-9 rounded-full border border-slate-800 hover:border-cyan-400 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-colors shadow-sm'
+            >
+              <ArrowUp className='w-4 h-4' />
+            </button>
+          </div>
         </motion.div>
-
-        <div className='flex justify-center gap-8 mb-16'>
-          <SocialLink
-            href='https://github.com'
-            icon={<Github className='w-6 h-6' />}
-            label='GitHub'
-          />
-          <SocialLink
-            href='https://linkedin.com'
-            icon={<Linkedin className='w-6 h-6' />}
-            label='LinkedIn'
-          />
-          <SocialLink
-            href='https://wa.me/'
-            icon={<MessageCircle className='w-6 h-6' />}
-            label='WhatsApp'
-          />
-        </div>
-
-        <div className='flex flex-col items-center gap-4 text-sm secondary/60'>
-          <p>
-            © {new Date().getFullYear()} Daniel Zamora. Todos los derechos
-            reservados.
-          </p>
-          <button
-            onClick={scrollToTop}
-            className='p-3 rounded-full bg-surface border border-border hover:border-accent/50 hover:text-accent transition-all group'
-            aria-label='Volver arriba'
-          >
-            <ArrowUp className='w-5 h-5 group-hover:-translate-y-1 transition-transform' />
-          </button>
-        </div>
       </div>
-    </footer>
+    </section>
   );
 };
-
-function SocialLink({
-  href,
-  icon,
-  label,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <a
-      href={href}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='p-4 rounded-full bg-surface border border-border secondary hover:text-white hover:border-accent/50 hover:bg-surfaceHighlight transition-all duration-300'
-      aria-label={label}
-    >
-      {icon}
-    </a>
-  );
-}

@@ -16,7 +16,7 @@ export const PortfolioDefaultView = () => {
 
   return (
     <div>
-      <NavbarDefault></NavbarDefault>
+      <NavbarDefault />
       <HomeDefault changeActiveLink={changeActiveLink} />
       <AboutDefault changeActiveLink={changeActiveLink} />
       <ResumeDefault changeActiveLink={changeActiveLink} />

@@ -1,93 +1,128 @@
 import { motion } from 'framer-motion';
-import { Calendar, Building2 } from 'lucide-react';
-import { experiences } from '@const/experience';
+import { useTranslation } from 'react-i18next';
+import { SectionLabel } from '@components/ui/section-label';
+import { ExperienceCard } from '@components/ui/experience-card';
+import { Building, Smartphone, Database, Code } from 'lucide-react';
 
 export const Experience = () => {
+  const [t] = useTranslation('translation');
+
+  const experiences = [
+    {
+      role: 'Full Stack / Frontend Developer',
+      company: 'Capmotion Technologies',
+      period: '01/2022 – Actualidad',
+      isActual: true,
+      companyIcon: <Building className='w-4 h-4 text-cyan-400' />,
+      bullets: [
+        t('exp1Bullet1'),
+        t('exp1Bullet2'),
+        t('exp1Bullet3'),
+        t('exp1Bullet4'),
+      ],
+      tags: [
+        { label: 'React', variant: 'cyan' as const },
+        { label: 'Angular', variant: 'cyan' as const },
+        { label: 'TypeScript', variant: 'cyan' as const },
+        { label: 'Micro-frontends' },
+        { label: 'REST APIs' },
+        { label: 'CI/CD' },
+        { label: 'Scrum' },
+      ],
+    },
+    {
+      role: 'Frontend & Mobile Developer',
+      company: 'Play Us Media',
+      period: '11/2020 – 05/2022',
+      companyIcon: <Smartphone className='w-4 h-4 text-cyan-400' />,
+      bullets: [
+        t('exp2Bullet1'),
+        t('exp2Bullet2'),
+        t('exp2Bullet3'),
+      ],
+      tags: [
+        { label: 'React Native', variant: 'cyan' as const },
+        { label: 'React', variant: 'cyan' as const },
+        { label: 'UI Component Libraries' },
+        { label: 'UX/UI' },
+        { label: 'Mobile Architecture' },
+      ],
+    },
+    {
+      role: 'Full Stack & Systems Analyst',
+      company: 'Magnetrón S.A.S',
+      period: '02/2019 – 11/2020',
+      companyIcon: <Database className='w-4 h-4 text-cyan-400' />,
+      bullets: [
+        t('exp3Bullet1'),
+        t('exp3Bullet2'),
+        t('exp3Bullet3'),
+      ],
+      tags: [
+        { label: 'PHP', variant: 'cyan' as const },
+        { label: 'Java', variant: 'cyan' as const },
+        { label: 'SQL Server', variant: 'cyan' as const },
+        { label: 'MySQL' },
+        { label: 'SSRS' },
+        { label: 'ERP Systems' },
+      ],
+    },
+    {
+      role: 'Web Developer',
+      company: 'Magnetrón S.A.S / Exus Agencia Web',
+      period: '12/2017 – 02/2019',
+      companyIcon: <Code className='w-4 h-4 text-cyan-400' />,
+      bullets: [
+        t('exp4Bullet1'),
+        t('exp4Bullet2'),
+      ],
+      tags: [
+        { label: 'JavaScript ES6+', variant: 'cyan' as const },
+        { label: 'PHP', variant: 'cyan' as const },
+        { label: 'CSS3 / Tailwind' },
+        { label: 'SEO Técnico' },
+        { label: 'Seguridad Web' },
+      ],
+    },
+  ];
+
   return (
-    <section id='experiencia' className='py-32 relative'>
-      <div className='max-w-6xl mx-auto px-6'>
+    <section id='experiencia' className='py-16 sm:py-24 border-t border-slate-800/60'>
+      <div className='max-w-6xl mx-auto px-4 sm:px-6'>
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className='mb-16'
         >
-          <h2 className='text-3xl font-bold mb-4 flex items-center gap-3 text-start'>
-            <span className='w-12 h-1 bg-accent rounded-full'></span>
-            Experiencia Laboral
-          </h2>
-          <p className='secondary text-lg'>
-            Mi trayectoria profesional y crecimiento técnico.
-          </p>
+          <SectionLabel>{t('provenTrackRecord')}</SectionLabel>
+          <div className='flex flex-col md:flex-row md:items-end justify-between mb-4 gap-4'>
+            <div>
+              <h3 className='text-2xl sm:text-4xl font-extrabold text-white tracking-tight'>
+                {t('workExperience')}
+              </h3>
+              <p className='text-sm text-slate-400 mt-2 max-w-xl'>
+                {t('experienceDescription')}
+              </p>
+            </div>
+            <div className='text-xs font-mono text-slate-500'>
+              {t('totalExperience')}
+            </div>
+          </div>
         </motion.div>
 
-        <div className='relative'>
-          {/* Vertical Line */}
-          <div className='absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2 hidden md:block' />
-
-          <div className='space-y-12'>
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                className={`flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-              >
-                {/* Content Side */}
-                <div className='flex-1'>
-                  <div
-                    className={`p-8 rounded-2xl bg-surface border border-border hover:border-accent/30 transition-all group ${index % 2 === 0 ? 'md:ml-12' : 'md:mr-12'}`}
-                  >
-                    <div className='flex flex-col gap-2 mb-4'>
-                      <h3 className='text-xl font-bold text-white group-hover:text-accent transition-colors'>
-                        {exp.role}
-                      </h3>
-                      <div className='flex items-center gap-2 text-accent text-sm font-medium'>
-                        <Building2 className='w-4 h-4' />
-                        {exp.company}
-                      </div>
-                    </div>
-                    <p className='secondary leading-relaxed mb-4'>
-                      {exp.description}
-                    </p>
-                    <div className='flex items-center gap-2 text-sm secondary/60'>
-                      <Calendar className='w-4 h-4' />
-                      {exp.period}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Center Dot (Desktop) */}
-                <div className='hidden md:flex items-center justify-center w-12 relative'>
-                  <div className='w-4 h-4 rounded-full bg-background border-2 border-accent z-10 shadow-[0_0_10px_rgba(6,182,212,0.5)]' />
-                </div>
-
-                {/* Empty Side (Desktop) */}
-                <div className='flex-1 hidden md:block' />
-              </motion.div>
-            ))}
-          </div>
+        <div className='space-y-8 relative'>
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <ExperienceCard {...exp} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
