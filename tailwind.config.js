@@ -10,19 +10,38 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    colors: {
-      background: '#0a0a0f',
-      surface: '#111118',
-      surfaceHighlight: '#16161e',
-      border: '#1e1e2e',
-      primary: '#f0f0f0',
-      secondary: '#8888a0',
-      accent: '#06b6d4',
-      accentGlow: 'rgba(6, 182, 212, 0.15)',
-    },
     extend: {
+      colors: {
+        cyber: {
+          950: '#07090e',
+          900: '#0b0f17',
+          850: '#0f1422',
+          800: '#151c2e',
+          750: '#1b243b',
+          700: '#232e4a',
+        },
+        cyan: {
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+        },
+        emerald: {
+          400: '#34d399',
+          500: '#10b981',
+        },
+        background: '#0b0f17',
+        surface: '#0f131c',
+        surfaceHighlight: '#16161e',
+        border: '#1e293b',
+        primary: '#f8fafc',
+        secondary: '#94a3b8',
+        accent: '#06b6d4',
+        accentGlow: 'rgba(6, 182, 212, 0.15)',
+      },
       fontFamily: {
-        default: ['Roboto', 'sans'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       borderWidth: {
         'active-link': '1px',
@@ -31,6 +50,9 @@ export default {
         'active-link': theme('colors.dark-tertiary'),
         'white-alpha-light': theme('colors.white-alpha-light'),
       }),
+      animation: {
+        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+      },
     },
   },
   plugins: [nextui(), addDynamicIconSelectors(), animations],

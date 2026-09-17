@@ -4,36 +4,61 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #0a0a0f;
-  color: #f0f0f0;
+  background-color: #0b0f17;
+  color: #94a3b8;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
+/* Subtle cyber grid backdrop */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(15, 20, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 45px -10px rgba(6, 182, 212, 0.35);
+}
+
+.glow-border {
+  box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.05);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #07090e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e1e2e;
+  background: #1e293b;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2d2d44;
+  background: #06b6d4;
 }
 
+/* Selection */
 ::selection {
-  background: rgba(6, 182, 212, 0.2);
-  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.25);
+  color: #67e8f9;
 }
