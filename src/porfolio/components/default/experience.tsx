@@ -19,6 +19,7 @@ export const Experience = () => {
         t('exp1Bullet2'),
         t('exp1Bullet3'),
         t('exp1Bullet4'),
+        t('exp1Bullet5'),
       ],
       tags: [
         { label: 'React', variant: 'cyan' as const },
